@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <script src="assets/angular/angular.js"></script>
+    <script src="assets/angular/angular-route.js"></script>
+    <script src="application.js"></script>
+
+    <title>BlockChain App</title>
+    <script type="text/javascript">
+        angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));
+    </script>
+</head>
+<body ng-app="myApp" ng-controller="MainController">
+
+    <a href="Farmer">Framer</a>
+    <a href="Manufacturer">Manufacturer</a>
+    <div ng-view></div>
+
+
+
+    <script src="app/farmer/farmerFactory.js"></script>
+    <script src="app/farmer/farmerService.js"></script>
+    <script src="app/farmer/farmerController.js"></script>
+
+    <script src="app/manufacturer/manufacturerController.js"></script>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="assets/jquery/jquery-3.4.1.slim.min.js"></script>
+<script src="assets/popper/popper.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
