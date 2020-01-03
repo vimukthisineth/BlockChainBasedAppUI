@@ -16,3 +16,16 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
 
     $locationProvider.html5Mode(true);
 }]);
+
+
+function getReq(method, url, data){
+    var req = {
+        method: method,
+        url: restBaseUrl+url,
+        headers: {
+            'Authorization': 'access token'
+        },
+        data: data
+    }
+    return req;
+}

@@ -5,16 +5,16 @@ app.service('FarmerService', ['$rootScope', 'FarmerFactory', function ($rootScop
             .then(function (response) {
                 callback(response.data);
             }), function (error) {
-            console.log("Error while getting all farmers: "+error);
+            console.log("Error while getting all farmers: "+error.toString());
         }
     }
 
-    this.newFarmer = function (farmer, callback) {
+    this.create = function (farmer, callback) {
         FarmerFactory.create(farmer)
             .then(function (response) {
                 callback(response.data);
             }), function (error) {
-            console.log("Error while creating farmer: "+error);
+            console.log("Error while creating farmer: "+error.toString());
         }
     }
     

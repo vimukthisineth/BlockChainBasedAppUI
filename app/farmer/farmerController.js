@@ -1,6 +1,5 @@
 app.controller('FarmerController', ['$scope', '$rootScope', 'FarmerFactory', 'FarmerService', function ($scope, $rootScope, FarmerFactory, FarmerService) {
     $scope.title = "Home";
-    console.log($scope.title);
 
     $scope.allFarmers = null;
 
@@ -14,7 +13,7 @@ app.controller('FarmerController', ['$scope', '$rootScope', 'FarmerFactory', 'Fa
     $scope.getAllFarmers();
 
     $scope.addNewFarmer = function () {
-        FarmerService.newFarmer({id:1, name:'Test name', address:'Add'}, function (data) {
+        FarmerService.create({id:1, name:'Test name', address:'Add'}, function (data) {
             console.log(data);
         })
     }
