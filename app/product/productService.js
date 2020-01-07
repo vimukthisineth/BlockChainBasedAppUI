@@ -1,5 +1,5 @@
 app.service('ProductService', ['$rootScope', 'ProductFactory', function ($rootScope, ProductFactory) {
-    this.newProduct = function (product, callback) {
+    this.create = function (product, callback) {
         ProductFactory.create(product)
             .then(function (response) {
                 callback(response.data);
@@ -7,4 +7,23 @@ app.service('ProductService', ['$rootScope', 'ProductFactory', function ($rootSc
             console.log("Error while creating product: "+error.toString());
         }
     }
+
+    this.getAllProducts = function (callback) {
+        ProductFactory.getAll()
+            .then(function (response) {
+                callback(response.data);
+            }), function (error) {
+            console.log(error);
+        }
+    }
+
+    this.getProductById = function (id, callback) {
+        ProductFactory.getById(id)
+            .then(function (response) {
+                callback(response.data);
+            }), function (error) {
+            console.log(error);
+        }
+    }
+
 }]);

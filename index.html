@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <title>BlockChain App</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,16 +12,20 @@
     <script src="assets/angular/angular-route.js"></script>
     <script src="application.js"></script>
 
-    <title>BlockChain App</title>
     <script type="text/javascript">
         angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));
     </script>
 </head>
 <body ng-app="myApp" ng-controller="MainController">
 
-    <a href="Farmer">Framer</a>
-    <a href="Manufacturer">Manufacturer</a>
     <div ng-view></div>
+
+
+    <hr>
+
+    <footer class="footer">
+        <p class="text-center">&copy; Company 2020</p>
+    </footer>
 
 
 
@@ -31,6 +36,13 @@
     <script src="app/product/productFactory.js"></script>
     <script src="app/product/productService.js"></script>
     <script src="app/product/productController.js"></script>
+
+    <script src="app/authentication/loginFactory.js"></script>
+    <script src="app/authentication/loginService.js"></script>
+    <script src="app/authentication/loginController.js"></script>
+
+    <script src="app/review/reviewFactory.js"></script>
+    <script src="app/review/reviewService.js"></script>
 
     <script src="app/manufacturer/manufacturerController.js"></script>
 

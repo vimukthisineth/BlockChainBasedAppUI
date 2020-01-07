@@ -1,7 +1,8 @@
-app.controller('FarmerController', ['$scope', '$rootScope', 'FarmerFactory', 'FarmerService', function ($scope, $rootScope, FarmerFactory, FarmerService) {
+app.controller('FarmerController', ['$scope', '$rootScope', '$location', 'FarmerFactory', 'FarmerService', 'ProductService', function ($scope, $rootScope, $location, FarmerFactory, FarmerService, ProductService) {
     $scope.title = "Home";
 
     $scope.allFarmers = null;
+    $scope.allProducts = null;
 
     $scope.getAllFarmers = function () {
         FarmerService.getAllFarmers(function (data) {
@@ -18,6 +19,21 @@ app.controller('FarmerController', ['$scope', '$rootScope', 'FarmerFactory', 'Fa
         })
     }
 
-    $scope.addNewFarmer();
+    $scope.goToNewProduct = function () {
+        $location.url('/NewProduct');
+    }
+
+    $scope.getAllProducts = function () {
+        ProductService.getAllProducts(function (data) {
+            $scope.allProducts = data;
+            console.log(data);
+        });
+    }
+
+    $scope.getAllProducts();
+
+    $scope.goToProduct = function (id) {
+        $location.url('/Product/'+id);
+    }
 
 }])

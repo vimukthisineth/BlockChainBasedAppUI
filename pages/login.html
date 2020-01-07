@@ -1,0 +1,26 @@
+<div class="container-fluid bg-dark">
+    <div class="row justify-content-center align-items-center" style="height: 100vh">
+        <div class="col-5 bg-light p-5 rounded">
+            <form>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" ng-model="newLogin.email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" ng-model="newLogin.password">
+                </div>
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Remember password</label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block" ng-click="login()">Login</button>
+                <button type="submit" class="btn btn-primary btn-block" ng-click="goToSignup()">Signup</button>
+                <div class="alert alert-warning" role="alert" ng-if="showLoginError">
+                    {{loginError}}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="container-fluid bg-dark">
+    <div class="row justify-content-center align-items-center" style="height: 100vh">
+        <div class="col-6 bg-light p-5 rounded">
+            <h1 class="text-center">Product details</h1>
+            <hr>
+            <div class="row">
+                <div class="col rounded bg-secondary" style="height: 150px"></div>
+                <div class="col">
+                    <h3>{{product.name}}</h3>
+                    <h4>Farmer's price: {{product.farmerPrice}}/-</h4>
+                </div>
+            </div>
+            <hr>
+            <h5>Reviews</h5>
+            <div class="row">
+                <div class="col">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Your review" aria-label="Your review" aria-describedby="basic-addon2" ng-model="newReview.content">
+                        <div class="input-group-append" style="cursor: pointer" ng-click="submitReview()">
+                            <span class="input-group-text" id="basic-addon2">Submit</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

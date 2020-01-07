@@ -1,0 +1,21 @@
+<div class="container-fluid bg-dark">
+    <div class="row justify-content-center align-items-center" style="height: 100vh">
+        <div class="col-6 bg-light p-5 rounded">
+            <h1 class="text-center">Submit a new Product</h1>
+            <hr>
+            <form>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Product Name</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Product name" ng-model="newProduct.name">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Wholesale price</label>
+                    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Wholesale price" ng-model="newProduct.farmerPrice">
+                </div>
+                <hr>
+                <button type="submit" class="btn btn-primary btn-block" ng-click="submitNewProduct()">Submit</button>
+                <button type="submit" class="btn btn-warning btn-block" ng-click="goBackToFarmer()">Go back</button>
+            </form>
+        </div>
+    </div>
+</div>
