@@ -5,7 +5,7 @@ var app = angular.module('myApp', ['ngRoute']);
 
 app.controller('MainController', ['$scope', '$rootScope', function ($scope, $rootScope) {
 
-    $scope.title = "no";
+    $rootScope.menuHtml = "";
 
 }]);
 
@@ -22,14 +22,15 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
 }]);
 
 
-function getReq(method, url, data){
+function getReq(method, url, data, params){
     var req = {
         method: method,
         url: restBaseUrl+url,
         headers: {
             'Authorization': 'access token'
         },
-        data: data
+        data: data,
+        params: params
     }
     return req;
 }

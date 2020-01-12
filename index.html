@@ -18,6 +18,8 @@
 </head>
 <body ng-app="myApp" ng-controller="MainController">
 
+    <div ng-include="menuHtml" ng-controller="MenuController"></div>
+
     <div ng-view></div>
 
 
@@ -27,7 +29,7 @@
         <p class="text-center">&copy; Company 2020</p>
     </footer>
 
-
+    <script src="menu/menuController.js"></script>
 
     <script src="app/farmer/farmerFactory.js"></script>
     <script src="app/farmer/farmerService.js"></script>

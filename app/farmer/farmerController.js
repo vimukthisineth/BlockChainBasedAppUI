@@ -1,8 +1,12 @@
-app.controller('FarmerController', ['$scope', '$rootScope', '$location', 'FarmerFactory', 'FarmerService', 'ProductService', function ($scope, $rootScope, $location, FarmerFactory, FarmerService, ProductService) {
+app.controller('FarmerController', ['$scope', '$rootScope', '$location', 'FarmerFactory', 'FarmerService', 'ProductService', 'LoginService', function ($scope, $rootScope, $location, FarmerFactory, FarmerService, ProductService, LoginService) {
     $scope.title = "Home";
+
+    $rootScope.menuHtml = "menu/farmerMenu.html";
 
     $scope.allFarmers = null;
     $scope.allProducts = null;
+
+    LoginService.validateToken();
 
     $scope.getAllFarmers = function () {
         FarmerService.getAllFarmers(function (data) {

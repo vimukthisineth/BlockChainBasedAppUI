@@ -1,5 +1,7 @@
 app.controller('LoginController', ['$scope', '$rootScope', '$location', 'LoginService', function ($scope, $rootScope, $location, LoginService) {
 
+    $rootScope.menuHtml = "";
+
     $scope.newLogin = {email:'', password:''};
     $scope.showLoginError = false;
     $scope.loginError = "";
@@ -12,7 +14,8 @@ app.controller('LoginController', ['$scope', '$rootScope', '$location', 'LoginSe
                 setCookie("user_id", data.user.id);
                 setCookie("user_type", data.user.userType);
                 setCookie("user_email", data.user.email);
-                setCookie("token", data.user.token);
+                setCookie("user_token", data.token);
+                console.log(getCookie("user_token"));
                 if (data.userType == "FARMER"){
                     $location.url('/Farmer');
                 }else if (data.userType == "MANUFACTURER") {
