@@ -13,7 +13,7 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
     $routeProvider.when('/', {templateUrl: 'pages/login.html', controller: 'LoginController'});
     $routeProvider.when('/Signup', {templateUrl: 'pages/signup.html', controller: 'LoginController'});
     $routeProvider.when('/Farmer', {templateUrl: 'pages/farmer.html', controller: 'FarmerController'});
-    $routeProvider.when('/Manufacturer', {templateUrl: 'pages/home.html', controller: 'ManufacturerController'});
+    $routeProvider.when('/Manufacturer', {templateUrl: 'pages/manufacturer.html', controller: 'ManufacturerController'});
     $routeProvider.when('/NewProduct', {templateUrl: 'pages/new_product.html', controller: 'ProductController'});
     $routeProvider.when('/Product/:id', {templateUrl: 'pages/view_product.html', controller: 'ProductController'});
 
@@ -27,7 +27,7 @@ function getReq(method, url, data, params){
         method: method,
         url: restBaseUrl+url,
         headers: {
-            'Authorization': 'access token'
+            'Authorization': getCookie("user_token")
         },
         data: data,
         params: params

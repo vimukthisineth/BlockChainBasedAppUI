@@ -1,7 +1,7 @@
 <div class="container-fluid p-3 pl-5 pr-5">
 
     <div class="jumbotron">
-        <h1 class="display-3 text-center">Sell and Promote your products</h1>
+        <h1 class="display-3 text-center">Find the best farmers and get your products approved</h1>
         <p class="lead text-center">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
         <p class="text-center"><button class="btn btn-lg btn-success" role="button" ng-click="goToNewProduct()">Submit a Product</button></p>
     </div>
@@ -15,7 +15,7 @@
             <div class="row" style="overflow-y: auto; height: 14rem;">
                 <div class="col" ng-repeat="product in allProducts">
                     <div class="card mb-2" style="width: 18rem; height: 10rem;">
-                        <div class="card-body" ng-click="goToProduct(product.id)" style="cursor: pointer">
+                        <div class="card-body" ng-click="goToProduct(product.id)" style="cursor: poinster">
                             <h5 class="card-title">{{product.name}}</h5>
                             <h6 class="card-subtitle mb-2 text-muted">Farmer's price: {{product.farmerPrice.toFixed(2)}} LKR</h6>
                             <p class="card-text">{{product.description}}</p>

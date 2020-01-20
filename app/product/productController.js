@@ -1,9 +1,13 @@
 app.controller('ProductController', ['$scope', '$rootScope', '$location', '$routeParams', 'ProductService', 'ReviewService', function ($scope, $rootScope, $location, $routeParams, ProductService, ReviewService) {
+    $rootScope.menuHtml = "menu/farmerMenu.html";
+
     $scope.newProduct = {
         name:'',
         farmerPrice:null,
         retailPrice:null,
-        productCategory:null
+        productCategory:null,
+        description:'',
+        expiryDate:null
     };
 
     if ($routeParams.id) {
@@ -22,6 +26,7 @@ app.controller('ProductController', ['$scope', '$rootScope', '$location', '$rout
             ReviewService.create($scope.newReview, function (data) {
                 $scope.newReview = data;
                 console.log(data);
+                $scope.getReviews();
             })
         }
 
@@ -32,7 +37,7 @@ app.controller('ProductController', ['$scope', '$rootScope', '$location', '$rout
             });
         }
 
-        // $scope.getReviews();
+        $scope.getReviews();
     }
 
     $scope.submitNewProduct = function () {
