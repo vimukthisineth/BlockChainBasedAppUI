@@ -37,7 +37,6 @@ app.controller('FarmerController', ['$scope', '$rootScope', '$location', 'Farmer
         });
     }
 
-    console.log($rootScope.user);
     $scope.getAllProducts();
 
     $scope.goToProduct = function (id) {

@@ -1,5 +1,4 @@
 app.controller('ProductController', ['$scope', '$rootScope', '$location', '$routeParams', 'ProductService', 'ReviewService', function ($scope, $rootScope, $location, $routeParams, ProductService, ReviewService) {
-    $rootScope.menuHtml = "menu/farmerMenu.html";
 
     $scope.newProduct = {
         name:'',
@@ -47,7 +46,11 @@ app.controller('ProductController', ['$scope', '$rootScope', '$location', '$rout
             console.log($scope.newProduct);
             ProductService.create($scope.newProduct, function (data) {
                 console.log(data);
-                $location.url('/Farmer');
+                if (getCookie("user_type") == "FARMER") {
+                    $location.url('/Farmer');
+                }else if (getCookie("user_type") == "MANUFACTURER") {
+                    $location.url('/Manufacturer');
+                }
             });
         }else {
             alert("Please fill the form");
