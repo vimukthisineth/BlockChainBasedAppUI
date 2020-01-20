@@ -17,6 +17,7 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
     $routeProvider.when('/Manufacturer', {templateUrl: 'pages/manufacturer.html', controller: 'ManufacturerController'});
     $routeProvider.when('/NewProduct', {templateUrl: 'pages/new_product.html', controller: 'ProductController'});
     $routeProvider.when('/Product/:id', {templateUrl: 'pages/view_product.html', controller: 'ProductController'});
+    $routeProvider.when('/Agency', {templateUrl: 'pages/agency.html', controller: 'AgencyController'});
 
 
     // $locationProvider.html5Mode(true);
@@ -24,11 +25,12 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
 
 
 function getReq(method, url, data, params){
+    var token = getCookie("user_token");
     var req = {
         method: method,
         url: restBaseUrl+url,
         headers: {
-            'Authorization': getCookie("user_token")
+            'Token': token + ''
         },
         data: data,
         params: params

@@ -24,5 +24,13 @@ app.controller('ManufacturerController', ['$scope', '$rootScope', '$location', '
     $scope.goToProduct = function (id) {
         $location.url('/Product/'+id);
     }
+
+//    Filters
+    $scope.productsOfUser = function (product) {
+        return product.user.id == getCookie("user_id");
+    }
+    $scope.productsOfOthers = function (product) {
+        return product.user.id != getCookie("user_id");
+    }
     
 }])

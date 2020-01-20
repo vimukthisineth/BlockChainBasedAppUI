@@ -22,12 +22,14 @@ app.controller('LoginController', ['$scope', '$rootScope', '$location', 'LoginSe
                     $location.url('/Farmer');
                 }else if (data.userType == "MANUFACTURER") {
                     $location.url('/Manufacturer');
+                }else if (data.userType == "AGENCY") {
+                    $location.url('/Agency');
                 }
             }else {
                 $scope.showLoginError = true;
                 $scope.loginError = "Login failed. Please check your credentials";
             }
-        })
+        });
         // $location.url('/Farmer');
     }
     
