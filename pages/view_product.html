@@ -19,8 +19,8 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-success btn-block" ng-click="certifyProduct()">Certify</button>
-            <button type="submit" class="btn btn-danger btn-block" ng-click="declineProduct()">Decline</button>
+            <button type="submit" class="btn btn-success btn-block" ng-click="certifyProduct()" ng-if="user.userType == 'AGENCY'">Certify</button>
+            <button type="submit" class="btn btn-danger btn-block" ng-click="declineProduct()" ng-if="user.userType == 'AGENCY'">Decline</button>
 
             <hr>
             <h5>Reviews</h5>

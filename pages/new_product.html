@@ -8,9 +8,17 @@
                     <label for="exampleInputEmail1">Product Name</label>
                     <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Product name" ng-model="newProduct.name">
                 </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Wholesale price</label>
-                    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Wholesale price" ng-model="newProduct.farmerPrice">
+                <div class="form-group" ng-if="user.userType == 'FARMER'">
+                    <label for="farmerPrice">Farmer's price</label>
+                    <input type="number" class="form-control" id="farmerPrice" placeholder="Farmer's price" ng-model="newProduct.farmerPrice">
+                </div>
+                <div class="form-group" ng-if="user.userType == 'MANUFACTURER'">
+                    <label for="retailPrice">Retail price</label>
+                    <input type="number" class="form-control" id="retailPrice" placeholder="Retail price" ng-model="newProduct.retailPrice">
+                </div>
+                <div class="form-group" ng-if="user.userType == 'MANUFACTURER'">
+                    <label for="wholeSalePrice">Wholesale price</label>
+                    <input type="number" class="form-control" id="wholeSalePrice" placeholder="Wholesale price" ng-model="newProduct.wholeSalePrice">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">Description</label>

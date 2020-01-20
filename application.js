@@ -18,6 +18,8 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
     $routeProvider.when('/NewProduct', {templateUrl: 'pages/new_product.html', controller: 'ProductController'});
     $routeProvider.when('/Product/:id', {templateUrl: 'pages/view_product.html', controller: 'ProductController'});
     $routeProvider.when('/Agency', {templateUrl: 'pages/agency.html', controller: 'AgencyController'});
+    $routeProvider.when('/Distributor', {templateUrl: 'pages/distributor.html', controller: 'DistributorController'});
+    $routeProvider.when('/NewDelivery', {templateUrl: 'pages/new_delivery.html', controller: 'DeliveryController'});
 
 
     // $locationProvider.html5Mode(true);

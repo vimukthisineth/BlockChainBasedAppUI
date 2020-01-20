@@ -1,0 +1,25 @@
+<div class="container-fluid p-3 pl-5 pr-5">
+
+    <div class="jumbotron">
+        <h1 class="display-3 text-center">Buy from Manufacturers and Distribute with ease.</h1>
+        <p class="lead text-center">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        <p class="text-center"><button class="btn btn-lg btn-success" role="button" ng-click="goToNewDelivery()">New Delivery</button></p>
+    </div>
+
+    <div class="row marketing">
+        <div class="col-lg-6">
+            <h5>Certified products</h5>
+            <div class="row" style="overflow-y: auto; height: 14rem;">
+                <div class="col" ng-repeat="product in allProducts | filter: approved">
+                    <div class="card mb-2" style="width: 18rem; height: 10rem;">
+                        <div class="card-body" ng-click="goToProduct(product.id)" style="cursor: pointer">
+                            <h5 class="card-title">{{product.name}}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Farmer's price: {{product.farmerPrice.toFixed(2)}} LKR</h6>
+                            <p class="card-text">{{product.description}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

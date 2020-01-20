@@ -9,6 +9,8 @@ app.controller('ProductController', ['$scope', '$rootScope', '$location', '$rout
         expiryDate:null
     };
 
+    $scope.user = getUser();
+
     if ($routeParams.id) {
         $scope.id = $routeParams.id;
         console.log($scope.id);
@@ -25,7 +27,7 @@ app.controller('ProductController', ['$scope', '$rootScope', '$location', '$rout
             ReviewService.create($scope.newReview, function (data) {
                 $scope.newReview.content = '';
                 $scope.getReviews();
-            })
+            });
         }
 
         $scope.getReviews = function () {
