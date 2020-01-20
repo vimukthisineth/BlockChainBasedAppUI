@@ -15,6 +15,8 @@ app.controller('LoginController', ['$scope', '$rootScope', '$location', 'LoginSe
                 setCookie("user_type", data.user.userType);
                 setCookie("user_email", data.user.email);
                 setCookie("user_token", data.token);
+                $rootScope.user = data.user;
+                $rootScope.user.token = data.token;
                 console.log(getCookie("user_token"));
                 if (data.userType == "FARMER"){
                     $location.url('/Farmer');

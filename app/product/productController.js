@@ -24,8 +24,7 @@ app.controller('ProductController', ['$scope', '$rootScope', '$location', '$rout
 
         $scope.submitReview = function () {
             ReviewService.create($scope.newReview, function (data) {
-                $scope.newReview = data;
-                console.log(data);
+                $scope.newReview.content = '';
                 $scope.getReviews();
             })
         }
@@ -42,6 +41,10 @@ app.controller('ProductController', ['$scope', '$rootScope', '$location', '$rout
 
     $scope.submitNewProduct = function () {
         if ($scope.newProduct.name != '' || $scope.farmerPrice != null) {
+            $scope.newProduct.productType = getCookie("user_type");
+            $scope.newProduct.user = {};
+            $scope.newProduct.user.id = getCookie("user_id");
+            console.log($scope.newProduct);
             ProductService.create($scope.newProduct, function (data) {
                 console.log(data);
                 $location.url('/Farmer');

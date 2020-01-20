@@ -6,6 +6,7 @@ var app = angular.module('myApp', ['ngRoute']);
 app.controller('MainController', ['$scope', '$rootScope', function ($scope, $rootScope) {
 
     $rootScope.menuHtml = "";
+    $rootScope.user = {};
 
 }]);
 

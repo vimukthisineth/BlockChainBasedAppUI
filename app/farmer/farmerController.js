@@ -4,7 +4,7 @@ app.controller('FarmerController', ['$scope', '$rootScope', '$location', 'Farmer
     $rootScope.menuHtml = "menu/farmerMenu.html";
 
     $scope.allFarmers = null;
-    $scope.allProducts = null;
+    $scope.allProducts = [];
 
     LoginService.validateToken();
 
@@ -29,11 +29,15 @@ app.controller('FarmerController', ['$scope', '$rootScope', '$location', 'Farmer
 
     $scope.getAllProducts = function () {
         ProductService.getAllProducts(function (data) {
-            $scope.allProducts = data;
-            console.log(data);
+            for (var i = 0; i < data.length; i++) {
+                if (data[i].productType == "FARMER"){
+                    $scope.allProducts.push(data[i]);
+                }
+            }
         });
     }
 
+    console.log($rootScope.user);
     $scope.getAllProducts();
 
     $scope.goToProduct = function (id) {
