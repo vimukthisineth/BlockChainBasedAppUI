@@ -1,3 +1,3 @@
-app.service('ManufacturerService', ['$rootScope', 'FarmerFactory', function ($rootScope, FarmerFactory) {
+app.service('ManufacturerService', ['$rootScope', 'FarmerFactory', 'ProductService', function ($rootScope, FarmerFactory, ProductService) {
 
 }]);

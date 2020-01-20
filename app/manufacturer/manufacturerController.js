@@ -1,4 +1,4 @@
-app.controller('ManufacturerController', ['$scope', '$rootScope', '$location', 'ProductService', function ($scope, $rootScope, $location, ProductService) {
+app.controller('ManufacturerController', ['$scope', '$rootScope', '$location', 'ProductService', 'ManufacturerService', function ($scope, $rootScope, $location, ProductService, ManufacturerService) {
     $scope.title = "Manufacturer";
 
     $rootScope.menuHtml = "menu/manufacturerMenu.html";

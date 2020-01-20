@@ -15,4 +15,16 @@ app.controller('AgencyController', ['$scope', '$rootScope', 'ProductService', fu
 
     $scope.getAllProducts();
 
+    $scope.goToProduct = function (id) {
+        $location.url('/Product/'+id);
+    }
+
+//    Filters
+    $scope.approved = function (product) {
+        return product.approved == true;
+    }
+    $scope.notApproved = function (product) {
+        return product.approved == false;
+    }
+
 }]);
