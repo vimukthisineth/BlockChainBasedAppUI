@@ -61,3 +61,12 @@ function getCookie(cname) {
     }
     return "";
 }
+
+function getUser() {
+    var user = {};
+    user.id = getCookie("user_id");
+    user.userType = getCookie("user_type");
+    user.email = getCookie("user_email");
+    user.token = getCookie("user_token");
+    return user;
+}

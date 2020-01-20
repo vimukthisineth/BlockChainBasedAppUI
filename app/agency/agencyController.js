@@ -1,6 +1,7 @@
-app.controller('AgencyController', ['$scope', '$rootScope', 'ProductService', function ($scope, $rootScope, ProductService) {
+app.controller('AgencyController', ['$scope', '$rootScope', '$location', 'ProductService', function ($scope, $rootScope, $location, ProductService) {
     $rootScope.menuHtml = "menu/agencyMenu.html";
     $scope.allProducts = [];
+    $scope.user = getUser();
 
     $scope.getAllProducts = function () {
         ProductService.getAllProducts(function (data) {

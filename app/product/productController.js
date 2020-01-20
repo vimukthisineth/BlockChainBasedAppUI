@@ -36,6 +36,22 @@ app.controller('ProductController', ['$scope', '$rootScope', '$location', '$rout
         }
 
         $scope.getReviews();
+
+        $scope.certifyProduct = function () {
+            $scope.product.approved = true;
+            $scope.updateProduct($scope.product);
+        }
+
+        $scope.declineProduct = function () {
+            $scope.product.approved = false;
+            $scope.updateProduct($scope.product);
+        }
+
+        $scope.updateProduct = function (product) {
+            ProductService.create(product, function (data) {
+                console.log(data);
+            });
+        }
     }
 
     $scope.submitNewProduct = function () {
@@ -60,5 +76,6 @@ app.controller('ProductController', ['$scope', '$rootScope', '$location', '$rout
     $scope.goBackToFarmer = function () {
         $location.url('/Farmer');
     }
+
 
 }]);
