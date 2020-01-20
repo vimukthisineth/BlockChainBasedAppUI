@@ -1,0 +1,26 @@
+<div class="container-fluid bg-dark">
+    <div class="row justify-content-center align-items-center" style="height: 100vh">
+        <div class="col-6 bg-light p-5 rounded">
+            <h1 class="text-center">Delivery details</h1>
+            <hr>
+            <div class="row">
+                <div class="col rounded bg-secondary"></div>
+                <div class="col">
+                    <h3>ID: {{delivery.id}}</h3>
+                    <h4><span class="badge badge-pill badge-primary" ng-click="goToProduct(delivery.product.id)" style="cursor: pointer">{{delivery.product.name}}</span></h4>
+                    <h4>From: {{delivery.origin}}</h4>
+                    <h4>To: {{delivery.destination}}</h4>
+                    <p>Date : {{delivery.date.substr(0,10)}}</p>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col">
+                    <h4>Remarks :</h4>
+                    <p>{{delivery.remarks}}</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

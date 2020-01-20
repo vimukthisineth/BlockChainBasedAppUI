@@ -1,4 +1,4 @@
-app.controller('DistributorController', ['$scope', '$rootScope', '$location', 'ProductService', 'DeliveryService', function ($scope, $rootScope, $location, ProductService, DeliveryService) {
+app.controller('DistributorController', ['$scope', '$rootScope', '$location', '$routeParams', 'ProductService', 'DeliveryService', function ($scope, $rootScope, $location, $routeParams, ProductService, DeliveryService) {
     $rootScope.menuHtml = "menu/distributorMenu.html";
 
     $scope.allProducts = [];
@@ -33,6 +33,10 @@ app.controller('DistributorController', ['$scope', '$rootScope', '$location', 'P
 
     $scope.goToNewDelivery = function(){
         $location.url('/NewDelivery');
+    }
+
+    $scope.goToDelivery = function(id){
+        $location.url('/Delivery/'+id);
     }
 
 //    Filters

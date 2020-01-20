@@ -1,4 +1,4 @@
-app.controller('DeliveryController', ['$scope', '$rootScope', '$location', 'DeliveryService', 'ProductService', function ($scope, $rootScope, $location, DeliveryService, ProductService) {
+app.controller('DeliveryController', ['$scope', '$rootScope', '$location', '$routeParams', 'DeliveryService', 'ProductService', function ($scope, $rootScope, $location, $routeParams, DeliveryService, ProductService) {
 
     $scope.allProducts = [];
     $scope.user = getUser();
@@ -30,5 +30,19 @@ app.controller('DeliveryController', ['$scope', '$rootScope', '$location', 'Deli
     }
 
     $scope.getAllProducts();
+
+    if ($routeParams.id) {
+        $scope.id = $routeParams.id;
+        $scope.delivery = {};
+
+        DeliveryService.getDeliveryById($scope.id, function (data) {
+            $scope.delivery = data;
+            console.log(data);
+        });
+    }
+
+    $scope.goToProduct = function (id) {
+        $location.url('/Product/'+id);
+    }
 
 }]);

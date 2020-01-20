@@ -13,5 +13,9 @@ app.factory('DeliveryFactory', ['$http', function ($http) {
         return $http(getReq('GET', 'api/deliveriesByUser/'+id, '', ''));
     }
 
+    deliveryFactory.getById = function (id) {
+        return $http(getReq('GET', 'api/delivery/'+id, '', ''));
+    }
+
     return deliveryFactory;
 }]);
