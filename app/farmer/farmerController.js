@@ -17,12 +17,6 @@ app.controller('FarmerController', ['$scope', '$rootScope', '$location', 'Farmer
     //
     // $scope.getAllFarmers();
 
-    $scope.addNewFarmer = function () {
-        FarmerService.create({id:1, name:'Test name', address:'Add'}, function (data) {
-            console.log(data);
-        })
-    }
-
     $scope.goToNewProduct = function () {
         $location.url('/NewProduct');
     }
