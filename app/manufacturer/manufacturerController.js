@@ -20,5 +20,9 @@ app.controller('ManufacturerController', ['$scope', '$rootScope', '$location', '
     $scope.goToNewProduct = function () {
         $location.url('/NewProduct');
     }
+
+    $scope.goToProduct = function (id) {
+        $location.url('/Product/'+id);
+    }
     
 }])

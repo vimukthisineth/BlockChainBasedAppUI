@@ -15,7 +15,7 @@
             <div class="row" style="overflow-y: auto; height: 14rem;">
                 <div class="col" ng-repeat="product in allProducts">
                     <div class="card mb-2" style="width: 18rem; height: 10rem;">
-                        <div class="card-body" ng-click="goToProduct(product.id)" style="cursor: poinster">
+                        <div class="card-body" ng-click="goToProduct(product.id)" style="cursor: pointer">
                             <h5 class="card-title">{{product.name}}</h5>
                             <h6 class="card-subtitle mb-2 text-muted">Farmer's price: {{product.farmerPrice.toFixed(2)}} LKR</h6>
                             <p class="card-text">{{product.description}}</p>

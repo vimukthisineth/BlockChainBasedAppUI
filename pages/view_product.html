@@ -20,16 +20,20 @@
             </div>
             <hr>
             <h5>Reviews</h5>
-            <div class="row">
-                <div class="col">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Your review" aria-label="Your review" aria-describedby="basic-addon2" ng-model="newReview.content">
-                        <div class="input-group-append" style="cursor: pointer" ng-click="submitReview()">
-                            <span class="input-group-text" id="basic-addon2">Submit</span>
+            <form ng-submit="submitReview()">
+                <div class="row">
+                    <div class="col">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Your review" aria-label="Your review" aria-describedby="basic-addon2" ng-model="newReview.content">
+                            <div class="input-group-append" style="cursor: pointer" ng-click="submitReview()">
+                                <span class="input-group-text" id="basic-addon2">Submit</span>
+                            </div>
+
                         </div>
                     </div>
                 </div>
-            </div>
+            </form>
+
             <div class="row" ng-repeat="review in allReviews | orderBy:'-id'">
                 <div class="col">
                     <blockquote class="blockquote">
