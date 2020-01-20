@@ -21,5 +21,20 @@
                 </div>
             </div>
         </div>
+
+        <div class="col-lg-6">
+            <h5>Your Deliveries</h5>
+            <div class="row" style="overflow-y: auto; height: 14rem;">
+                <div class="col" ng-repeat="delivery in allDeliveries | orderBy: '-id'">
+                    <div class="card mb-2" style="width: 18rem; height: 10rem;">
+                        <div class="card-body" ng-click="goToProduct(delivery.id)" style="cursor: pointer">
+                            <h5 class="card-title">{{delivery.product.name}} ({{delivery.qty}})</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">{{delivery.origin}} to {{delivery.destination}}</h6>
+                            <p class="card-text">Remarks: {{delivery.remarks}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

@@ -6,19 +6,27 @@
             <form>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Product</label>
-                    <select class="form-control" id="exampleFormControlSelect1"ng-model="newDelivery.product"></select>
+                    <select class="form-control" id="exampleFormControlSelect1"ng-model="newDelivery.product" ng-options="product as product.name for product in allProducts track by product.id"></select>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Product Name</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Product name" ng-model="newProduct.name">
+                    <label for="Quantity">Quantity</label>
+                    <input type="number" class="form-control" id="Quantity" placeholder="Quantity" ng-model="newDelivery.qty">
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Description</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" ng-model="newProduct.description"></textarea>
+                    <label for="Origin">Origin</label>
+                    <input type="text" class="form-control" id="Origin" placeholder="Origin" ng-model="newDelivery.origin">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputExp">Expiry Date</label>
-                    <input type="date" class="form-control" id="exampleInputExp" placeholder="Wholesale price" ng-model="newProduct.expiryDate">
+                    <label for="Destination">Destination</label>
+                    <input type="text" class="form-control" id="Destination" placeholder="Destination" ng-model="newDelivery.destination">
+                </div>
+                <div class="form-group">
+                    <label for="charge">Delivery charge</label>
+                    <input type="number" class="form-control" id="charge" placeholder="Delivery charge" ng-model="newDelivery.deliveryCharge">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Remarks</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" ng-model="newDelivery.remarks"></textarea>
                 </div>
                 <hr>
                 <button type="submit" class="btn btn-primary btn-block" ng-click="submitNewDelivery()">Submit</button>

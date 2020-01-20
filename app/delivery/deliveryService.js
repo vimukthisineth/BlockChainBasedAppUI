@@ -17,4 +17,13 @@ app.service('DeliveryService', ['$rootScope', 'ProductFactory', 'DeliveryFactory
         }
     }
 
+    this.getAllDeliveriesByUserId = function (id, callback) {
+        DeliveryFactory.getAllByUserId(id)
+            .then(function (response) {
+                callback(response.data);
+            }), function (error) {
+            console.log("Error while get all by user id");
+        }
+    }
+
 }]);

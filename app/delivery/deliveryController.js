@@ -1,9 +1,10 @@
-app.controller('DeliveryController', ['$scope', '$rootScope', '$location', 'DeliveryService', function ($scope, $rootScope, $location, DeliveryService) {
+app.controller('DeliveryController', ['$scope', '$rootScope', '$location', 'DeliveryService', 'ProductService', function ($scope, $rootScope, $location, DeliveryService, ProductService) {
 
     $scope.allProducts = [];
     $scope.user = getUser();
 
     $scope.newDelivery = {};
+    $scope.newDelivery.user = $scope.user;
     
     $scope.submitNewDelivery = function () {
         DeliveryService.newDelivery($scope.newDelivery, function (data) {
