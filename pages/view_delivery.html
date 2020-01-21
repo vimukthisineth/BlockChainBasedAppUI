@@ -4,7 +4,14 @@
             <h1 class="text-center">Delivery details</h1>
             <hr>
             <div class="row">
-                <div class="col rounded bg-secondary"></div>
+                <div class="col rounded bg-secondary p-1">
+                    <iframe
+                            width="100%"
+                            height="100%"
+                            frameborder="0" style="border:0"
+                            ng-src="{{trustSrc(routeUrl.src)}}" allowfullscreen>
+                    </iframe>
+                </div>
                 <div class="col">
                     <h3>ID: {{delivery.id}}</h3>
                     <h4><span class="badge badge-pill badge-primary" ng-click="goToProduct(delivery.product.id)" style="cursor: pointer">{{delivery.product.name}}</span></h4>

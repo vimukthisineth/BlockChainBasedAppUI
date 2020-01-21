@@ -1,10 +1,15 @@
-app.controller('DeliveryController', ['$scope', '$rootScope', '$location', '$routeParams', 'DeliveryService', 'ProductService', function ($scope, $rootScope, $location, $routeParams, DeliveryService, ProductService) {
+app.controller('DeliveryController', ['$scope', '$rootScope', '$location', '$routeParams', '$sce', 'DeliveryService', 'ProductService', function ($scope, $rootScope, $location, $routeParams, $sce, DeliveryService, ProductService) {
 
     $scope.allProducts = [];
     $scope.user = getUser();
 
     $scope.newDelivery = {};
     $scope.newDelivery.user = $scope.user;
+    $scope.routeUrl = "";
+
+    $scope.trustSrc = function(src) {
+        return $sce.trustAsResourceUrl(src);
+    }
     
     $scope.submitNewDelivery = function () {
         DeliveryService.newDelivery($scope.newDelivery, function (data) {
@@ -38,6 +43,8 @@ app.controller('DeliveryController', ['$scope', '$rootScope', '$location', '$rou
         DeliveryService.getDeliveryById($scope.id, function (data) {
             $scope.delivery = data;
             console.log(data);
+            $scope.routeUrl = {src: "https://www.google.com/maps/embed/v1/directions?key=AIzaSyAKXsRBGniwZd_0Vsm6jh2jqCGaw0u2TN4&origin="+$scope.delivery.origin+"&destination="+$scope.delivery.destination+"&avoid=tolls|highways",
+            title: "Route"};
         });
     }
 
