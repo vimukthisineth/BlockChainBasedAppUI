@@ -7,9 +7,7 @@ app.controller('ManufacturerController', ['$scope', '$rootScope', '$location', '
     $scope.getAllProducts = function () {
         ProductService.getAllProducts(function (data) {
             for (var i = 0; i < data.length; i++) {
-                if (data[i].productType == "MANUFACTURER"){
-                    $scope.allProducts.push(data[i]);
-                }
+                $scope.allProducts = data;
             }
         });
         console.log($scope.allProducts);
@@ -27,10 +25,10 @@ app.controller('ManufacturerController', ['$scope', '$rootScope', '$location', '
 
 //    Filters
     $scope.productsOfUser = function (product) {
-        return product.user.id == getCookie("user_id");
+        return product.user.id == getCookie("user_id") && product.productType == "MANUFACTURER";
     }
     $scope.productsOfOthers = function (product) {
-        return product.user.id != getCookie("user_id");
+        return product.user.id != getCookie("user_id") && product.productType == "FARMER";
     }
     
 }])

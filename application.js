@@ -22,6 +22,7 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
     $routeProvider.when('/Distributor', {templateUrl: 'pages/distributor.html', controller: 'DistributorController'});
     $routeProvider.when('/NewDelivery', {templateUrl: 'pages/new_delivery.html', controller: 'DeliveryController'});
     $routeProvider.when('/Delivery/:id', {templateUrl: 'pages/view_delivery.html', controller: 'DeliveryController'});
+    $routeProvider.when('/NewDeliveryRoute', {templateUrl: 'pages/new_delivery_route.html', controller: 'DeliveryRouteController'});
 
 
     // $locationProvider.html5Mode(true);

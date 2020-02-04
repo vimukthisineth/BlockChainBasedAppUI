@@ -1,4 +1,5 @@
 app.controller('DeliveryController', ['$scope', '$rootScope', '$location', '$routeParams', '$sce', 'DeliveryService', 'ProductService', function ($scope, $rootScope, $location, $routeParams, $sce, DeliveryService, ProductService) {
+    $rootScope.menuHtml = "menu/distributorMenu.html";
 
     $scope.allProducts = [];
     $scope.user = getUser();
@@ -51,5 +52,27 @@ app.controller('DeliveryController', ['$scope', '$rootScope', '$location', '$rou
     $scope.goToProduct = function (id) {
         $location.url('/Product/'+id);
     }
+
+}]);
+
+app.controller('DeliveryRouteController', ['$scope', '$rootScope', '$location', '$routeParams', '$sce', 'DeliveryService', 'ProductService', function ($scope, $rootScope, $location, $routeParams, $sce, DeliveryService, ProductService) {
+    $rootScope.menuHtml = "menu/distributorMenu.html";
+
+    $scope.user = getUser();
+    $scope.newDeliveryRoute = {};
+
+    $scope.goBackToDistributor = function () {
+        $location.url('/Distributor');
+    }
+
+    $scope.getAllDeliveries = function(){
+        DeliveryService.getAllDeliveriesByUserId($scope.user.id, function (data) {
+            $scope.allDeliveries = data;
+            console.log(data);
+        });
+    }
+
+    $scope.getAllDeliveries();
+
 
 }]);

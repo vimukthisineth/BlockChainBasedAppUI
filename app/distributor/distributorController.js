@@ -35,6 +35,10 @@ app.controller('DistributorController', ['$scope', '$rootScope', '$location', '$
         $location.url('/NewDelivery');
     }
 
+    $scope.goToNewDeliveryRoute = function(){
+        $location.url('/NewDeliveryRoute');
+    }
+
     $scope.goToDelivery = function(id){
         $location.url('/Delivery/'+id);
     }

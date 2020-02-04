@@ -39,10 +39,10 @@ app.controller('FarmerController', ['$scope', '$rootScope', '$location', 'Farmer
 
 //    Filters
     $scope.productsOfUser = function (product) {
-        return product.user.id == getCookie("user_id");
+        return product.user.id == getCookie("user_id") && product.productType == "FARMER";
     }
     $scope.productsOfOthers = function (product) {
-        return product.user.id != getCookie("user_id");
+        return product.user.id != getCookie("user_id") && product.productType == "FARMER";
     }
 
 }])
