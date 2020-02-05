@@ -29,15 +29,35 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col">
+    <div class="row mt-3">
+        <div class="col-5 d-flex justify-content-end align-items-center">
             <!--Left button set-->
+            <button class="btn-rounded-green">Organic Fruits</button>
+            <button class="btn-rounded-green ml-2">Organic Vegetable</button>
         </div>
         <div class="col-2">
             <!--Middle image-->
+            <img src="images/logo.png" width="100%">
         </div>
-        <div class="col">
+        <div class="col-5 d-flex justify-content-start align-items-center">
             <!--Right button set-->
+            <button class="btn-rounded-green">Organic Juice</button>
+            <button class="btn-rounded-green ml-2">Organic Dried Fruit</button>
         </div>
     </div>
+    <hr>
+    <div class="row mt-3">
+        <div class="col d-flex justify-content-center mb-3" ng-repeat="product in allProducts">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="images/thumbs/{{product.image}}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{product.name}}</h5>
+                    <h6>{{product.retailPrice.toFixed(2)}} LKR</h6>
+                    <p class="card-text">{{product.description}}</p>
+                    <button class="btn btn-success btn-block" ng-click="goToProduct(product.id)">Buy now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3"></div>
 </div>

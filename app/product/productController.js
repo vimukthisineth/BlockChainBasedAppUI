@@ -20,6 +20,14 @@ app.controller('ProductController', ['$scope', '$rootScope', '$location', '$rout
 
         ProductService.getProductById($scope.id, function (data) {
             $scope.product = data;
+
+            if ($scope.product.productCategory.name == "Fruit") {
+                $scope.product.image = "fruit.jpg";
+            }else if ($scope.product.productCategory.name == "Vegetable") {
+                $scope.product.image = "vegetable.jpg";
+            }else if ($scope.product.productCategory.name == "Juice") {
+                $scope.product.image = "juice.jpg";
+            }
             console.log(data);
         });
 
