@@ -16,7 +16,7 @@
         angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));
     </script>
 </head>
-<body ng-app="myApp" ng-controller="MainController" class="bg-info">
+<body ng-app="myApp" ng-controller="MainController" style="background: #c8d3d9">
 
     <div ng-include="menuHtml" ng-controller="MenuController"></div>
 
@@ -57,6 +57,8 @@
     <script src="app/delivery/deliveryFactory.js"></script>
     <script src="app/delivery/deliveryService.js"></script>
     <script src="app/delivery/deliveryController.js"></script>
+
+    <script src="app/customer/customerController.js"></script>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

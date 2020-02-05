@@ -1,4 +1,6 @@
-app.controller('ProductController', ['$scope', '$rootScope', '$location', '$routeParams', 'ProductService', 'ReviewService', function ($scope, $rootScope, $location, $routeParams, ProductService, ReviewService) {
+app.controller('ProductController', ['$scope', '$rootScope', '$location', '$routeParams', 'ProductService', 'ReviewService', 'ProductCategoryFactory', function ($scope, $rootScope, $location, $routeParams, ProductService, ReviewService, ProductCategoryFactory) {
+
+    $scope.allCategories = [];
 
     $scope.newProduct = {
         name:'',
@@ -54,6 +56,13 @@ app.controller('ProductController', ['$scope', '$rootScope', '$location', '$rout
                 console.log(data);
             });
         }
+    }
+
+    ProductCategoryFactory.getAll()
+        .then(function (response) {
+            $scope.allCategories = response.data;
+        }), function (error) {
+        console.log(error);
     }
 
     $scope.submitNewProduct = function () {

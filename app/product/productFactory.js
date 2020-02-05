@@ -15,3 +15,13 @@ app.factory('ProductFactory', ['$http', function ($http) {
 
     return productFactory;
 }]);
+
+app.factory('ProductCategoryFactory', ['$http', function ($http) {
+    var productCategoryFactory = {};
+
+    productCategoryFactory.getAll = function () {
+        return $http(getReq('GET', 'api/productCategories', '', ''));
+    }
+
+    return productCategoryFactory;
+}]);

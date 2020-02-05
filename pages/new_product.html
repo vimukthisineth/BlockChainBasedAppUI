@@ -12,6 +12,10 @@
                     <label for="farmerPrice">Farmer's price</label>
                     <input type="number" class="form-control" id="farmerPrice" placeholder="Farmer's price" ng-model="newProduct.farmerPrice">
                 </div>
+                <div class="form-group">
+                    <label for="category">Product Category</label>
+                    <select class="form-control" id="category"ng-model="newProduct.productCategory" ng-options="category as category.name for category in allCategories track by category.id"></select>
+                </div>
                 <div class="form-group" ng-if="user.userType == 'MANUFACTURER'">
                     <label for="retailPrice">Retail price</label>
                     <input type="number" class="form-control" id="retailPrice" placeholder="Retail price" ng-model="newProduct.retailPrice">

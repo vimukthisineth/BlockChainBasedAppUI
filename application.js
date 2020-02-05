@@ -23,9 +23,11 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
     $routeProvider.when('/NewDelivery', {templateUrl: 'pages/new_delivery.html', controller: 'DeliveryController'});
     $routeProvider.when('/Delivery/:id', {templateUrl: 'pages/view_delivery.html', controller: 'DeliveryController'});
     $routeProvider.when('/NewDeliveryRoute', {templateUrl: 'pages/new_delivery_route.html', controller: 'DeliveryRouteController'});
+    $routeProvider.when('/Customer', {templateUrl: 'pages/customer.html', controller: 'CustomerController'});
 
 
     // $locationProvider.html5Mode(true);
+    $locationProvider.hashPrefix('!');
 }]);
 
 
