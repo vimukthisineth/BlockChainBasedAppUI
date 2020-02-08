@@ -4,7 +4,7 @@
     <list default="true" id="328ae217-4850-4bce-a106-bc279b52c7ad" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/authentication/loginController.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/authentication/loginController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/customer/customerController.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/customer/customerController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application.js" beforeDir="false" afterPath="$PROJECT_DIR$/application.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/signup.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -96,7 +96,7 @@
       <workItem from="1580888064160" duration="12573000" />
       <workItem from="1581070495358" duration="696000" />
       <workItem from="1581139488552" duration="6000" />
-      <workItem from="1581139588874" duration="11806000" />
+      <workItem from="1581139588874" duration="13607000" />
     </task>
     <servers />
   </component>

@@ -34,6 +34,7 @@
                     <label class="form-check-label" for="exampleCheck1">Remember password</label>
                 </div>
                 <button type="submit" class="btn btn-success btn-block" ng-click="createAccount()">Create new account</button>
+                <button type="submit" class="btn btn-warning btn-block" ng-click="notACustomer()">Not a Customer</button>
                 <div class="alert alert-warning" role="alert" ng-if="showLoginError">
                     {{loginError}}
                 </div>

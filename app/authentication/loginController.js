@@ -61,5 +61,11 @@ app.controller('LoginController', ['$scope', '$rootScope', '$location', 'LoginSe
             }
         })
     }
+
+    $scope.notACustomer = function () {
+        $scope.newLogin.userType = "";
+        setCookie("user_type", "");
+        $scope.user = getUser();
+    }
     
 }]);
