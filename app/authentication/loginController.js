@@ -45,7 +45,7 @@ app.controller('LoginController', ['$scope', '$rootScope', '$location', 'LoginSe
         LoginService.signup($scope.newLogin, function (data) {
             console.log(data);
             if (data.authResponseCode == "SUCCESS") {
-                $location.url('/');
+                $location.url('/Login');
             }else if (data.authResponseCode == "EMAIL_ALREADY_EXIST"){
                 $scope.showLoginError = true;
                 $scope.loginError = "Email is already registered";

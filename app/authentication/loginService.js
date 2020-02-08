@@ -22,7 +22,7 @@ app.service('LoginService', ['$rootScope', '$location', 'LoginFactory', function
         setCookie("user_type", "");
         setCookie("user_email", "");
         setCookie("user_token", "");
-        $location.url('/');
+        $location.url('/Login');
     }
 
     this.validateToken = function () {
@@ -30,7 +30,7 @@ app.service('LoginService', ['$rootScope', '$location', 'LoginFactory', function
         LoginFactory.validateToken()
             .then(function (response) {
                 if (!response.data){
-                    $location.url('/');
+                    $location.url('/Login');
                 }
             }), function (error) {
             console.log("Error while validating token: "+error);
