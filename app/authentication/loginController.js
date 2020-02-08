@@ -6,6 +6,12 @@ app.controller('LoginController', ['$scope', '$rootScope', '$location', 'LoginSe
     $scope.showLoginError = false;
     $scope.loginError = "";
 
+    $scope.user = getUser();
+    if ($scope.user.userType == "CUSTOMER"){
+        $scope.newLogin.userType = "CUSTOMER";
+        console.log($scope.newLogin);
+    }
+
     $scope.login = function () {
         LoginService.attemptLogin($scope.newLogin, function (data) {
             console.log(data);

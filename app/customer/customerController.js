@@ -3,6 +3,8 @@ app.controller('CustomerController', ['$scope', '$rootScope', 'ProductService', 
 
     $scope.allProducts = [];
 
+    setCookie("user_type", "CUSTOMER");
+
     ProductService.getAllProducts(function (data) {
         for (var i = 0; i < data.length; i++) {
             if (data[i].productCategory.name == "Fruit") {
