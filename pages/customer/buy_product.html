@@ -22,6 +22,38 @@
     <hr>
     <div class="row mb-2">
         <div class="col d-flex justify-content-center">
+            <h3>- Reviews -</h3>
+        </div>
+    </div>
+    <hr>
+    <div class="row mb-2">
+        <div class="col">
+            <form ng-submit="submitReview()">
+                <div class="row">
+                    <div class="col">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Your review" aria-label="Your review" aria-describedby="basic-addon2" ng-model="newReview.content">
+                            <div class="input-group-append" style="cursor: pointer" ng-click="submitReview()">
+                                <span class="input-group-text" id="basic-addon2">Submit</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row" ng-repeat="review in allReviews | orderBy:'-id'">
+        <div class="col pl-5">
+            <blockquote class="blockquote">
+                <p class="mb-0">{{review.content}} <img src="images/smile.png" width="20px" ng-if="review.sentiment == 'Positive'"><img src="images/sad.png" width="20px" ng-if="review.sentiment == 'Negative'"></p>
+                <footer class="blockquote-footer">{{review.user.firstName + ' ' + review.user.lastName}} <cite title="Source Title">- {{review.date.substr(0,10)}}</cite></footer>
+            </blockquote>
+        </div>
+    </div>
+    <hr>
+    <div class="row mb-2">
+        <div class="col d-flex justify-content-center">
             <h3>- History -</h3>
         </div>
     </div>

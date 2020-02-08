@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="328ae217-4850-4bce-a106-bc279b52c7ad" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/view_product.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/view_product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/customer/buy_product.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/customer/buy_product.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,40 +19,8 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>FarmerController</find>
-      <find>getAllFarmers</find>
-      <find>farmer.html</find>
-      <find>addNewProduct</find>
-      <find>exdays</find>
-      <find>/Farmer</find>
-      <find>user_email</find>
-      <find>getReviewsByProductId</find>
-      <find>getReviews</find>
-      <find>getCookie</find>
-      <find>getAllProducts</find>
-      <find>FarmerService.create</find>
-      <find>addNewFarmer</find>
-      <find>api/products/</find>
-      <find>-id</find>
-      <find>goToProduct</find>
-      <find>DeliveryService</find>
-      <find>bg</find>
-      <find>ng-options</find>
-      <find>ProductService</find>
-      <find>approved</find>
-      <find>$scope.product =</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
   </component>
   <component name="ProjectId" id="1XTWJYyCHyHiIbxH7x6VUiJHCmm" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -126,7 +94,7 @@
       <workItem from="1580888064160" duration="12573000" />
       <workItem from="1581070495358" duration="696000" />
       <workItem from="1581139488552" duration="6000" />
-      <workItem from="1581139588874" duration="846000" />
+      <workItem from="1581139588874" duration="3206000" />
     </task>
     <servers />
   </component>
