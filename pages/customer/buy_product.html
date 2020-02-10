@@ -69,11 +69,44 @@
                 </div>
             </div>
         </div>
+        <div class="col-2 border border-secondary m-2 rounded pt-3 pb-2" ng-if="product.harvestedDate != null">
+            <div class="row">
+                <div class="col-8 border-right">
+                    <p style="text-align: center">Crop Harvested</p>
+                    <p style="text-align: center">{{product.harvestedDate.substr(0,10)}}</p>
+                </div>
+                <div class="col d-flex align-items-center">
+                    <p> -> </p>
+                </div>
+            </div>
+        </div>
         <div class="col-2 border border-secondary m-2 rounded pt-3 pb-2" ng-if="product.manufacturedDate != null">
             <div class="row">
                 <div class="col-8 border-right">
                     <p style="text-align: center">Manufactured</p>
                     <p style="text-align: center">{{product.manufacturedDate.substr(0,10)}}</p>
+                </div>
+                <div class="col d-flex align-items-center">
+                    <p> -> </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-2 border border-secondary m-2 rounded pt-3 pb-2" ng-if="product.approvedDate != null">
+            <div class="row">
+                <div class="col-8 border-right">
+                    <p style="text-align: center">Approved by Agency</p>
+                    <p style="text-align: center">{{product.approvedDate.substr(0,10)}}</p>
+                </div>
+                <div class="col d-flex align-items-center">
+                    <p> -> </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-2 border border-secondary m-2 rounded pt-3 pb-2" ng-if="product.disApprovedDate != null">
+            <div class="row">
+                <div class="col-8 border-right">
+                    <p style="text-align: center">Disapproved by Agency</p>
+                    <p style="text-align: center">{{product.disApprovedDate.substr(0,10)}}</p>
                 </div>
                 <div class="col d-flex align-items-center">
                     <p> -> </p>
