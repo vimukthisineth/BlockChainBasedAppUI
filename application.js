@@ -1,6 +1,6 @@
 'use strict';
-var restBaseUrl = "http://18.218.196.175:8050/";
-// var restBaseUrl = "http://localhost:8050/";
+// var restBaseUrl = "http://18.218.196.175:8050/";
+var restBaseUrl = "http://localhost:8050/";
 
 var app = angular.module('myApp', ['ngRoute']);
 

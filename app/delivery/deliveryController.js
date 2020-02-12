@@ -60,6 +60,13 @@ app.controller('DeliveryRouteController', ['$scope', '$rootScope', '$location', 
 
     $scope.user = getUser();
     $scope.newDeliveryRoute = {};
+    $scope.newDeliveryRoute.deliveries = [];
+    $scope.allDeliveries = [];
+    $scope.allSelectedDeliveries = [];
+
+    $scope.loading = false;
+    $scope.routeCalculated = false;
+    $scope.calculatedRoute = {};
 
     $scope.goBackToDistributor = function () {
         $location.url('/Distributor');
@@ -72,7 +79,29 @@ app.controller('DeliveryRouteController', ['$scope', '$rootScope', '$location', 
         });
     }
 
+    $scope.addToList = function(){
+        $scope.new = true;
+        for (var i = 0; i < $scope.newDeliveryRoute.deliveries.length; i++) {
+            if ($scope.newDeliveryRoute.deliveries[i].id == $scope.delivery[0].id){
+                $scope.new = false;
+            }
+        }
+        if ($scope.new == true){
+            Array.prototype.push.apply($scope.newDeliveryRoute.deliveries, $scope.delivery);
+        }
+    }
+
     $scope.getAllDeliveries();
 
+    $scope.submitNewDeliveryRoute = function () {
+        $scope.loading = true;
+        $scope.routeCalculated = false;
+        DeliveryService.newDeliveryRoute($scope.newDeliveryRoute, function (data) {
+            $scope.loading = false;
+            $scope.routeCalculated = true;
+            $scope.calculatedRoute = data;
+            console.log(data);
+        });
+    }
 
 }]);

@@ -31,7 +31,25 @@ app.service('DeliveryService', ['$rootScope', 'ProductFactory', 'DeliveryFactory
             .then(function (response) {
                 callback(response.data);
             }), function (error) {
-            console.log("Error while get all by user id");
+            console.log("Error while get delivery by id"+error);
+        }
+    }
+
+    this.newDeliveryRoute = function (deliveryRoute, callback) {
+        DeliveryFactory.createRoute(deliveryRoute)
+            .then(function (response) {
+                callback(response.data);
+            }), function (error) {
+            console.log("Error while creating new delivery route: "+error);
+        }
+    }
+
+    this.getDeliveryRouteById = function (id, callback) {
+        DeliveryFactory.getRouteById(id)
+            .then(function (response) {
+                callback(response.data);
+            }), function (error) {
+            console.log("Error while get delivery route by id"+error);
         }
     }
 

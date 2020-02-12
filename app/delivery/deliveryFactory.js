@@ -5,6 +5,10 @@ app.factory('DeliveryFactory', ['$http', function ($http) {
         return $http(getReq('POST', 'api/delivery', delivery, ''));
     }
 
+    deliveryFactory.createRoute = function (deliveryRoute) {
+        return $http(getReq('POST', 'api/deliveryRoute', deliveryRoute, ''));
+    }
+
     deliveryFactory.getAll = function () {
         return $http(getReq('GET', 'api/deliveries', '', ''));
     }
@@ -15,6 +19,10 @@ app.factory('DeliveryFactory', ['$http', function ($http) {
 
     deliveryFactory.getById = function (id) {
         return $http(getReq('GET', 'api/delivery/'+id, '', ''));
+    }
+
+    deliveryFactory.getRouteById = function (id) {
+        return $http(getReq('GET', 'api/deliveryRoute/'+id, '', ''));
     }
 
     return deliveryFactory;
