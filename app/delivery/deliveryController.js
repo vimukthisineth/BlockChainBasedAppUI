@@ -67,6 +67,7 @@ app.controller('DeliveryRouteController', ['$scope', '$rootScope', '$location', 
     $scope.loading = false;
     $scope.routeCalculated = false;
     $scope.calculatedRoute = {};
+    $scope.routeUrl = {src: "https://www.google.com/maps/embed/v1/directions?key=AIzaSyAKXsRBGniwZd_0Vsm6jh2jqCGaw0u2TN4&origin=Kandy&destination=Jaffna&avoid=tolls|highways&waypoints=Kandy|Colombo|Jaffna"};
 
     $scope.goBackToDistributor = function () {
         $location.url('/Distributor');
@@ -91,6 +92,10 @@ app.controller('DeliveryRouteController', ['$scope', '$rootScope', '$location', 
         }
     }
 
+    $scope.trustSrc = function(src) {
+        return $sce.trustAsResourceUrl(src);
+    }
+
     $scope.getAllDeliveries();
 
     $scope.submitNewDeliveryRoute = function () {
@@ -101,6 +106,17 @@ app.controller('DeliveryRouteController', ['$scope', '$rootScope', '$location', 
             $scope.routeCalculated = true;
             $scope.calculatedRoute = data;
             console.log(data);
+            var origin = $scope.calculatedRoute.path[0].destination;
+            console.log(origin);
+            var destination = $scope.calculatedRoute.path[($scope.calculatedRoute.path.length-1)].destination;
+            var url = "https://www.google.com/maps/embed/v1/directions?key=AIzaSyAKXsRBGniwZd_0Vsm6jh2jqCGaw0u2TN4&origin="+origin+"&destination="+destination+"&avoid=tolls|highways&waypoints=";
+            for (var i = 0; i < $scope.calculatedRoute.path.length-1; i++) {
+                url += $scope.calculatedRoute.path[i].destination+"|";
+            }
+            url = url.substring(0, url.length-1);
+            console.log(url);
+            $scope.routeUrl = {src: url,
+                title: "Route"};
         });
     }
 
