@@ -7,13 +7,15 @@ app.controller('CustomerController', ['$scope', '$rootScope', 'ProductService', 
 
     ProductService.getAllProducts(function (data) {
         for (var i = 0; i < data.length; i++) {
-            if (data[i].approvedDate != null){
+            if (data[i].approvedDate != null || data[i].productType == "FARMER"){
                 if (data[i].productCategory.name == "Fruit") {
                     data[i].image = "fruit.jpg";
                 }else if (data[i].productCategory.name == "Vegetable") {
                     data[i].image = "vegetable.jpg";
                 }else if (data[i].productCategory.name == "Juice") {
                     data[i].image = "juice.jpg";
+                }else {
+                    data[i].image = "vegetable.jpg";
                 }
                 $scope.allProducts.push(data[i]);
             }
