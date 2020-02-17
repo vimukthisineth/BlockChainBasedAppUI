@@ -8,7 +8,7 @@ app.controller('DistributorController', ['$scope', '$rootScope', '$location', '$
     $scope.getAllProducts = function () {
         ProductService.getAllProducts(function (data) {
             for (var i = 0; i < data.length; i++) {
-                if (data[i].productType == "MANUFACTURER"){
+                if (data[i].productType == "MANUFACTURER" || data[i].productType == "FARMER"){
                     $scope.allProducts.push(data[i]);
                 }
             }
