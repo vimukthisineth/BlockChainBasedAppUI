@@ -27,9 +27,10 @@ app.controller('DeliveryController', ['$scope', '$rootScope', '$location', '$rou
     $scope.getAllProducts = function () {
         ProductService.getAllProducts(function (data) {
             for (var i = 0; i < data.length; i++) {
-                if (data[i].productType == "MANUFACTURER"){
-                    $scope.allProducts.push(data[i]);
-                }
+                // if (data[i].productType == "MANUFACTURER"){
+                //     $scope.allProducts.push(data[i]);
+                // }
+                $scope.allProducts.push(data[i]);
             }
         });
         console.log($scope.allProducts);
