@@ -52,7 +52,7 @@
                 <img class="card-img-top" src="images/thumbs/{{product.image}}" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">{{product.name}} <span class="badge badge-pill badge-warning" ng-if="product.productType == 'FARMER'">From Farmer</span></h5>
-                    <h6>{{product.retailPrice.toFixed(2)}} LKR</h6>
+                    <h6>{{product.productType == 'FARMER' ? product.farmerPrice.toFixed(2) : product.retailPrice.toFixed(2)}} LKR</h6>
                     <p class="card-text">{{product.description}}</p>
                     <button class="btn btn-success btn-block" ng-click="goToProduct(product.id)">Buy now</button>
                 </div>

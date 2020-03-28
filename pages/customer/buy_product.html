@@ -12,11 +12,11 @@
         <div class="col-6 m-3">
             <p style="color: #958e78">{{product.productCategory.name}} ></p>
             <h3>{{product.name}} <span class="badge badge-pill badge-success" ng-if="product.approved">Certified</span></h3>
-            <h5>{{product.retailPrice.toFixed(2)}} LKR</h5>
+            <h5>{{product.productType == 'FARMER' ? product.farmerPrice.toFixed(2) : product.retailPrice.toFixed(2)}} LKR</h5>
             <h6>Expired by: {{product.expiryDate.substr(0,10)}}</h6>
             <hr>
             <p>{{product.description}}</p>
-            <button class="btn btn-success btn-block">Buy now</button>
+            <button class="btn btn-success btn-block" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-cart-plus"></i> Add to cart</button>
         </div>
     </div>
     <hr>
@@ -122,6 +122,33 @@
                 <div class="col d-flex align-items-center">
                     <p> -> </p>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add to cart</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Quantity</span>
+                    </div>
+                    <input type="number" class="form-control" placeholder="Ex: 2" aria-describedby="basic-addon1" ng-model="addToCartQty">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" ng-click="addToCart()">Add</button>
             </div>
         </div>
     </div>

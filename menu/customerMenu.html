@@ -6,13 +6,16 @@
                     <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="" ng-click="goToCart()"><i class="fa fa-shopping-cart"></i> Cart</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Settings</a>
+                    <a class="nav-link" href=""><i class="fa fa-cog"></i> Settings</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="" ng-click="goToLogin()">Log in</a>
+                <li class="nav-item" ng-hide="user.id">
+                    <a class="nav-link" href="" ng-click="goToLogin()"><i class="fa fa-sign-in-alt"></i>Log in</a>
+                </li>
+                <li class="nav-item" ng-if="user.id">
+                    <a class="nav-link" href="" ng-click="logOut()"><i class="fa fa-sign-out-alt"></i> Log out</a>
                 </li>
             </ul>
         </nav>

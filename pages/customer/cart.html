@@ -1,0 +1,97 @@
+<div class="container bg-light">
+    <div class="row mt-2">
+        <div class="col">
+            <img src="images/cart_banner.jpg" width="100%">
+            <h1 class="font-weight-bold text-dark mt-3 text-center">Cart</h1>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">Action</th>
+                    <th scope="col">#</th>
+                    <th scope="col">Item</th>
+                    <th scope="col">QTY</th>
+                    <th scope="col" style="text-align: right">Unit Price</th>
+                    <th scope="col" style="text-align: right">Total</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in allCartItems">
+                    <td><button type="submit" class="btn btn-danger" ng-click="removeCartItem(item)"><i class="fa fa-trash-alt"></i> Remove</button></td>
+                    <th scope="row">{{$index+1}}</th>
+                    <td>{{item.product.name}}</td>
+                    <td>{{item.qty}}</td>
+                    <td style="text-align: right">{{item.product.productType == 'FARMER' ? item.product.farmerPrice.toFixed(2) : item.product.retailPrice.toFixed(2)}}</td>
+                    <td style="text-align: right">{{item.product.productType == 'FARMER' ? (item.product.farmerPrice * item.qty).toFixed(2) : (item.product.retailPrice * item.qty).toFixed(2)}}</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col mb-3">
+            <div class="card">
+                <div class="card-header">
+                    Summary
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Cart total: {{cartTotal.toFixed(2)}} LKR</h5>
+                    <a href="" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Checkout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Checkout</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Card Number</span>
+                    </div>
+                    <input type="number" class="form-control" placeholder="" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon2">Expiry date</span>
+                    </div>
+                    <input type="month" class="form-control" placeholder="Ex: 2" aria-describedby="basic-addon2">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3">CVV</span>
+                    </div>
+                    <input type="number" class="form-control" placeholder="" aria-describedby="basic-addon3">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon4">Delivery Address</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon4" ng-model="deliveryAddress">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" ng-click="checkout()">Pay</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,6 +1,8 @@
-app.controller('ProductController', ['$scope', '$rootScope', '$location', '$routeParams', 'ProductService', 'ReviewService', 'ProductCategoryFactory', function ($scope, $rootScope, $location, $routeParams, ProductService, ReviewService, ProductCategoryFactory) {
+app.controller('ProductController', ['$scope', '$rootScope', '$location', '$routeParams', 'ProductService', 'ReviewService', 'ProductCategoryFactory', 'CartService',
+    function ($scope, $rootScope, $location, $routeParams, ProductService, ReviewService, ProductCategoryFactory, CartService) {
 
     $scope.allCategories = [];
+    $scope.addToCartQty = '';
 
     $scope.newProduct = {
         name:'',
@@ -14,6 +16,9 @@ app.controller('ProductController', ['$scope', '$rootScope', '$location', '$rout
     $scope.user = getUser();
 
     if ($routeParams.id) {
+        if ($location.path().includes("/BuyProduct")){
+            $rootScope.menuHtml = "menu/customerMenu.html";
+        }
         $scope.id = $routeParams.id;
         console.log($scope.id);
         $scope.product = {};
@@ -64,6 +69,7 @@ app.controller('ProductController', ['$scope', '$rootScope', '$location', '$rout
                 console.log(data);
             });
         }
+
     }
 
     ProductCategoryFactory.getAll()
@@ -95,6 +101,21 @@ app.controller('ProductController', ['$scope', '$rootScope', '$location', '$rout
     $scope.goBackToFarmer = function () {
         $location.url('/Farmer');
     }
+
+
+
+        $scope.addToCart = function () {
+            console.log($scope.product);
+            var cartItem = {};
+            cartItem.product = $scope.product;
+            cartItem.qty = $scope.addToCartQty;
+
+            CartService.createCartItem(cartItem, function (result) {
+                if (result.id){
+                    alert("Added to cart");
+                }
+            });
+        }
 
 
 }]);

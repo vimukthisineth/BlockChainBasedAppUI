@@ -6,4 +6,10 @@ app.controller('MenuController', ['$scope', '$rootScope', 'LoginService', '$loca
     $scope.goToLogin = function () {
         $location.url('/Login');
     }
+
+    $scope.goToCart = function () {
+        $location.url('/Cart');
+    }
+
+    $rootScope.user = getUser();
 }]);

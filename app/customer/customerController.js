@@ -3,6 +3,8 @@ app.controller('CustomerController', ['$scope', '$rootScope', 'ProductService', 
 
     $scope.allProducts = [];
 
+    $scope.user = getUser();
+
     setCookie("user_type", "CUSTOMER");
 
     ProductService.getAllProducts(function (data) {
