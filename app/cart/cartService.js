@@ -31,4 +31,14 @@ app.service('CartService', ['$rootScope', 'CartFactory', function ($rootScope, C
         }
     }
 
+    this.checkout = function (checkoutDto, callback) {
+        CartFactory.checkout(checkoutDto)
+            .then(function (response) {
+                console.log(response.data);
+                callback(response.data);
+            }), function (error) {
+            console.log(error);
+        }
+    }
+
 }]);

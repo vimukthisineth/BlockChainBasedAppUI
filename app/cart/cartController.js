@@ -6,8 +6,11 @@ app.controller('CartController', ['$scope', '$rootScope', '$location', 'CartServ
 
     $scope.allCartItems = [];
     $scope.cartTotal = 0;
+    $scope.user = getUser();
+    $scope.deliveryAddress = "";
 
     $scope.getAllCartItems = function(){
+        $scope.deliveryAddress = "";
         $scope.cartTotal = 0;
         CartService.getByUser(function (result) {
             $scope.allCartItems = result;
@@ -28,6 +31,14 @@ app.controller('CartController', ['$scope', '$rootScope', '$location', 'CartServ
             if (result == 1){
                 alert("Item removed");
             }
+            $scope.getAllCartItems();
+        });
+    }
+
+    $scope.checkout = function () {
+        var checkoutDto = {user: $scope.user, address: $scope.deliveryAddress};
+        CartService.checkout(checkoutDto, function (result) {
+            alert("Thanks and come again");
             $scope.getAllCartItems();
         });
     }
