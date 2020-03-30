@@ -13,6 +13,7 @@ app.controller('MainController', ['$scope', '$rootScope', function ($scope, $roo
 
 app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
     $routeProvider.when('/', {templateUrl: 'pages/customer/customer.html', controller: 'CustomerController'});
+    $routeProvider.when('/Admin', {templateUrl: 'pages/admin/admin.html', controller: 'AdminController'});
     $routeProvider.when('/Login', {templateUrl: 'pages/login.html', controller: 'LoginController'});
     $routeProvider.when('/Signup', {templateUrl: 'pages/signup.html', controller: 'LoginController'});
     $routeProvider.when('/Farmer', {templateUrl: 'pages/farmer.html', controller: 'FarmerController'});

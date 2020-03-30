@@ -37,4 +37,14 @@ app.service('LoginService', ['$rootScope', '$location', 'LoginFactory', function
         }
     }
 
+    this.getAllUsers = function (callback) {
+        LoginFactory.getAllUsers()
+            .then(function (response) {
+                console.log(response.data);
+                callback(response.data);
+            }), function (error) {
+            console.log(error);
+        }
+    }
+
 }]);

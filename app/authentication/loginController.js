@@ -34,6 +34,8 @@ app.controller('LoginController', ['$scope', '$rootScope', '$location', 'LoginSe
                     $location.url('/Distributor');
                 }else if (data.userType == "CUSTOMER") {
                     $location.url('/Customer');
+                }else if (data.userType == "ADMIN") {
+                    $location.url('/Admin');
                 }
             }else {
                 $scope.showLoginError = true;

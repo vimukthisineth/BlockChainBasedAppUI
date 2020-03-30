@@ -17,5 +17,9 @@ app.factory('CartFactory', ['$http', function ($http) {
         return $http(getReq('POST', 'api/checkout', checkoutDto, ''));
     }
 
+    cartFactory.getAllPurchases = function () {
+        return $http(getReq('POST', 'api/purchases', '', ''));
+    }
+
     return cartFactory;
 }]);

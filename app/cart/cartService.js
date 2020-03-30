@@ -41,4 +41,14 @@ app.service('CartService', ['$rootScope', 'CartFactory', function ($rootScope, C
         }
     }
 
+    this.getAllPurchases = function (callback) {
+        CartFactory.getAllPurchases()
+            .then(function (response) {
+                console.log(response.data);
+                callback(response.data);
+            }), function (error) {
+            console.log(error);
+        }
+    }
+
 }]);

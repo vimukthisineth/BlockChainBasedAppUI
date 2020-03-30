@@ -11,6 +11,7 @@ app.service('ProductService', ['$rootScope', 'ProductFactory', function ($rootSc
     this.getAllProducts = function (callback) {
         ProductFactory.getAll()
             .then(function (response) {
+                console.log(response.data);
                 callback(response.data);
             }), function (error) {
             console.log(error);

@@ -5,6 +5,11 @@ app.controller('CustomerController', ['$scope', '$rootScope', 'ProductService', 
 
     $scope.user = getUser();
 
+    console.log($scope.user.userType);
+    if ($scope.user.userType == 'ADMIN'){
+        $location.url('/Admin');
+    }
+
     setCookie("user_type", "CUSTOMER");
 
     ProductService.getAllProducts(function (data) {

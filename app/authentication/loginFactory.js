@@ -13,5 +13,9 @@ app.factory('LoginFactory', ['$http', function ($http) {
         return $http(getReq('POST', 'auth/validateToken', '', {user: getCookie("user_id"), token: getCookie("user_token")}));
     }
 
+    loginFactory.getAllUsers = function () {
+        return $http(getReq('POST', 'auth/users', '', ''));
+    }
+
     return loginFactory;
 }]);

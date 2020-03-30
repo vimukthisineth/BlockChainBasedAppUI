@@ -1,0 +1,133 @@
+<div class="container bg-light mt-2">
+    <div class="row">
+        <div class="col text-center p-2">
+            <h3 class="font-weight-bold text-dark">Dashboard</h3>
+            <hr>
+        </div>
+    </div>
+
+    <div class="row" style="height: 200px">
+        <div class="col-3 shadow-lg p-3 m-3 rounded text-center align-middle my-auto" style="background-color: #0f6674">
+            <h2 class="font-weight-bold text-light"><i class="fas fa-shopping-bag"></i> Purchases</h2>
+            <h6 class="text-light" style="cursor: pointer" ng-click="expandPurchases()">Expand <i class="fas fa-arrow-circle-right"></i></h6>
+        </div>
+
+        <div class="col-3 shadow-lg p-3 m-3 rounded text-center align-middle my-auto" style="background-color: #747203">
+            <h2 class="font-weight-bold text-light"><i class="fas fa-carrot"></i> Products</h2>
+            <h6 class="text-light" style="cursor: pointer" ng-click="expandProducts()">Expand <i class="fas fa-arrow-circle-right"></i></h6>
+        </div>
+
+        <div class="col-3 shadow-lg p-3 m-3 rounded text-center align-middle my-auto" style="background-color: #740300">
+            <h2 class="font-weight-bold text-light"><i class="fas fa-users"></i> Users</h2>
+            <h6 class="text-light" style="cursor: pointer" ng-click="expandUsers()">Expand <i class="fas fa-arrow-circle-right"></i></h6>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col text-center m-2" ng-if="loading">
+            <div class="spinner-border text-success my-auto" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" ng-hide="hidePurchases">
+        <div class="col">
+            <h2 class="text-center">Purchases</h2>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">User</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Product</th>
+                    <th scope="col">QTY</th>
+                    <th scope="col">Unit price</th>
+                    <th scope="col">Total</th>
+                    <th scope="col">Delivery address</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="purchase in allPurchases">
+                    <th scope="row">{{purchase.id}}</th>
+                    <td>{{purchase.user.id}} {{purchase.user.firstName}} {{purchase.user.lastName}}</td>
+                    <td>{{purchase.date.substring(0,10)}}</td>
+                    <td>{{purchase.product.name}}</td>
+                    <td>{{purchase.qty}}</td>
+                    <td>{{purchase.unitPrice}}</td>
+                    <td>{{(purchase.qty * purchase.unitPrice).toFixed(2)}}</td>
+                    <td>{{purchase.address}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row" ng-hide="hideProducts">
+        <div class="col">
+            <h2 class="text-center">Products</h2>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Farmer price</th>
+                    <th scope="col">Retail price</th>
+                    <th scope="col">Wholesale price</th>
+                    <th scope="col">Product type</th>
+                    <th scope="col">Farmed date</th>
+                    <th scope="col">Harvested date</th>
+                    <th scope="col">Manufactured date</th>
+                    <th scope="col">Approved date</th>
+                    <th scope="col">Disapproved date</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="product in allProducts">
+                    <th scope="row">{{product.id}}</th>
+                    <td>{{product.name}}</td>
+                    <td>{{product.farmerPrice}}</td>
+                    <td>{{product.retailPrice}}</td>
+                    <td>{{product.wholeSalePrice}}</td>
+                    <td>{{product.productType}}</td>
+                    <td>{{product.farmedDate.substring(0,10)}}</td>
+                    <td>{{product.harvestedDate.substring(0,10)}}</td>
+                    <td>{{product.manufacturedDate.substring(0,10)}}</td>
+                    <td>{{product.approvedDate.substring(0,10)}}</td>
+                    <td>{{product.disApprovedDate.substring(0,10)}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row" ng-hide="hideUsers">
+        <div class="col">
+            <h2 class="text-center">Users</h2>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First name</th>
+                    <th scope="col">Last name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">User type</th>
+                    <th scope="col">Address</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="user in allUsers">
+                    <th scope="row">{{user.id}}</th>
+                    <td>{{user.firstName}}</td>
+                    <td>{{user.lastName}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.userType}}</td>
+                    <td>{{user.address}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
