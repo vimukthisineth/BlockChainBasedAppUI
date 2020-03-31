@@ -104,8 +104,8 @@
 
     <div class="row" ng-hide="hideUsers">
         <div class="col">
-            <h2 class="text-center">Users</h2>
-            <table class="table table-striped">
+            <h2 class="text-center">Users <span class="badge badge-primary" style="cursor: pointer" ng-click="validateUsers()">Validate</span></h2>
+            <table class="table table-striped" ng-if="hideValidatedUsers">
                 <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -124,6 +124,31 @@
                     <td>{{user.email}}</td>
                     <td>{{user.userType}}</td>
                     <td>{{user.address}}</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="table table-striped" ng-hide="hideValidatedUsers">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First name</th>
+                    <th scope="col">Last name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">User type</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Validity</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="user in allUsersValidated">
+                    <th scope="row">{{user.user.id}}</th>
+                    <td>{{user.user.firstName}}</td>
+                    <td>{{user.user.lastName}}</td>
+                    <td>{{user.user.email}}</td>
+                    <td>{{user.user.userType}}</td>
+                    <td>{{user.user.address}}</td>
+                    <td>{{user.valid ? "Valid" : "Fake"}}</td>
                 </tr>
                 </tbody>
             </table>

@@ -17,5 +17,9 @@ app.factory('LoginFactory', ['$http', function ($http) {
         return $http(getReq('POST', 'auth/users', '', ''));
     }
 
+    loginFactory.getAllUsersValidated = function () {
+        return $http(getReq('POST', 'auth/usersValidated', '', ''));
+    }
+
     return loginFactory;
 }]);

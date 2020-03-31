@@ -47,4 +47,14 @@ app.service('LoginService', ['$rootScope', '$location', 'LoginFactory', function
         }
     }
 
+    this.getAllUsersValidated = function (callback) {
+        LoginFactory.getAllUsersValidated()
+            .then(function (response) {
+                console.log(response.data);
+                callback(response.data);
+            }), function (error) {
+            console.log(error);
+        }
+    }
+
 }]);
