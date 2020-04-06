@@ -39,8 +39,16 @@ app.controller('DistributorController', ['$scope', '$rootScope', '$location', '$
         $location.url('/NewDeliveryRoute');
     }
 
+    $scope.goToNewCustomerDeliveryRoute = function(){
+        $location.url('/NewCustomerDeliveryRoute');
+    }
+
     $scope.goToDelivery = function(id){
         $location.url('/Delivery/'+id);
+    }
+
+    $scope.goToWarehouses = function(){
+        $location.url('/Warehouses');
     }
 
 //    Filters

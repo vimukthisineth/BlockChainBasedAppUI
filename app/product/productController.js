@@ -1,8 +1,10 @@
-app.controller('ProductController', ['$scope', '$rootScope', '$location', '$routeParams', 'ProductService', 'ReviewService', 'ProductCategoryFactory', 'CartService',
-    function ($scope, $rootScope, $location, $routeParams, ProductService, ReviewService, ProductCategoryFactory, CartService) {
+app.controller('ProductController', ['$scope', '$rootScope', '$location', '$routeParams', 'ProductService', 'ReviewService', 'ProductCategoryFactory', 'CartService', 'WarehouseService',
+    function ($scope, $rootScope, $location, $routeParams, ProductService, ReviewService, ProductCategoryFactory, CartService, WarehouseService) {
 
     $scope.allCategories = [];
     $scope.addToCartQty = '';
+    $scope.warehouse = {};
+    $scope.allWarehouses = [];
 
     $scope.newProduct = {
         name:'',
@@ -22,6 +24,10 @@ app.controller('ProductController', ['$scope', '$rootScope', '$location', '$rout
         $scope.id = $routeParams.id;
         console.log($scope.id);
         $scope.product = {};
+
+        WarehouseService.getAllWarehouses(function (result) {
+            $scope.allWarehouses = result;
+        });
 
         ProductService.getProductById($scope.id, function (data) {
             $scope.product = data;
@@ -109,6 +115,7 @@ app.controller('ProductController', ['$scope', '$rootScope', '$location', '$rout
             var cartItem = {};
             cartItem.product = $scope.product;
             cartItem.qty = $scope.addToCartQty;
+            cartItem.warehouse
 
             CartService.createCartItem(cartItem, function (result) {
                 if (result.id){

@@ -9,6 +9,10 @@ app.factory('DeliveryFactory', ['$http', function ($http) {
         return $http(getReq('POST', 'api/deliveryRoute', deliveryRoute, ''));
     }
 
+    deliveryFactory.createCustomerRoute = function (purchases) {
+        return $http(getReq('POST', 'api/customerDeliveryRoute', purchases, ''));
+    }
+
     deliveryFactory.getAll = function () {
         return $http(getReq('GET', 'api/deliveries', '', ''));
     }

@@ -23,8 +23,10 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
     $routeProvider.when('/Agency', {templateUrl: 'pages/agency.html', controller: 'AgencyController'});
     $routeProvider.when('/Distributor', {templateUrl: 'pages/distributor.html', controller: 'DistributorController'});
     $routeProvider.when('/NewDelivery', {templateUrl: 'pages/new_delivery.html', controller: 'DeliveryController'});
+    $routeProvider.when('/Warehouses', {templateUrl: 'pages/warehouses.html', controller: 'WarehouseController'});
     $routeProvider.when('/Delivery/:id', {templateUrl: 'pages/view_delivery.html', controller: 'DeliveryController'});
     $routeProvider.when('/NewDeliveryRoute', {templateUrl: 'pages/new_delivery_route.html', controller: 'DeliveryRouteController'});
+    $routeProvider.when('/NewCustomerDeliveryRoute', {templateUrl: 'pages/new_customer_delivery_route.html', controller: 'CustomerDeliveryRouteController'});
     $routeProvider.when('/Customer', {templateUrl: 'pages/customer/customer.html', controller: 'CustomerController'});
     $routeProvider.when('/BuyProduct/:id', {templateUrl: 'pages/customer/buy_product.html', controller: 'ProductController'});
     $routeProvider.when('/Cart', {templateUrl: 'pages/customer/cart.html', controller: 'CartController'});

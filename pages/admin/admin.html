@@ -46,6 +46,7 @@
                     <th scope="col">Unit price</th>
                     <th scope="col">Total</th>
                     <th scope="col">Delivery address</th>
+                    <th scope="col">Delivered</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -58,6 +59,7 @@
                     <td>{{purchase.unitPrice}}</td>
                     <td>{{(purchase.qty * purchase.unitPrice).toFixed(2)}}</td>
                     <td>{{purchase.address}}</td>
+                    <td>{{purchase.delivered ? 'Delivered' : 'Pending delivery'}}</td>
                 </tr>
                 </tbody>
             </table>

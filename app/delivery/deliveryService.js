@@ -44,6 +44,15 @@ app.service('DeliveryService', ['$rootScope', 'ProductFactory', 'DeliveryFactory
         }
     }
 
+    this.newCustomerRoute = function (purchases, callback) {
+        DeliveryFactory.createCustomerRoute(purchases)
+            .then(function (response) {
+                callback(response.data);
+            }), function (error) {
+            console.log("Error while creating new delivery route: "+error);
+        }
+    }
+
     this.getDeliveryRouteById = function (id, callback) {
         DeliveryFactory.getRouteById(id)
             .then(function (response) {

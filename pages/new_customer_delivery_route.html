@@ -1,0 +1,40 @@
+<div class="container-fluid bg-dark">
+    <div class="row justify-content-center align-items-center" style="height: 100vh">
+        <div class="col-6 bg-light p-5 rounded">
+            <h1 class="text-center">Deliver to customers</h1>
+            <hr>
+            <div class="row">
+                <div class="col d-flex justify-content-center" ng-hide="!loading">
+                    <div class="spinner-border" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row" ng-hide="!routeCalculated">
+                <div class="col">
+                    Best route: <span ng-repeat="stop in calculatedRoute.path">{{stop.destination}} -> </span>
+                    <iframe
+                            width="100%"
+                            height="300px"
+                            frameborder="0" style="border:0"
+                            ng-src="{{trustSrc(routeUrl.src)}}" allowfullscreen>
+                    </iframe>
+                    <hr>
+                </div>
+            </div>
+            <form>
+                <div class="form-group">
+                    <label for="Deliveries">Purchases</label>
+                    <select multiple class="form-control" id="Deliveries" ng-model="selectedPurchase" ng-options="purchase as (purchase.id+':'+purchase.product.name+' x '+purchase.qty+'kg. Address: '+purchase.address) for purchase in allPurchases track by purchase.id" ng-dblclick="addToList()"></select>
+                </div>
+                <div class="form-group">
+                    <label for="SelectedDeliveries">Selected Purchases</label>
+                    <select multiple class="form-control" id="SelectedDeliveries" ng-model="allSelectedDeliveries" ng-options="purchase as (purchase.id+':'+purchase.product.name+' x '+purchase.qty+'kg. Address: '+purchase.address) for purchase in selectedPurchases track by purchase.id"></select>
+                </div>
+                <hr>
+                <button type="submit" class="btn btn-primary btn-block" ng-click="submitNewDeliveryRoute()">Submit</button>
+                <button type="submit" class="btn btn-warning btn-block" ng-click="goBackToDistributor()">Go back</button>
+            </form>
+        </div>
+    </div>
+</div>
