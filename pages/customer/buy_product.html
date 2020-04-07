@@ -46,8 +46,8 @@
     <div class="row" ng-repeat="review in allReviews | orderBy:'-id'">
         <div class="col pl-5">
             <blockquote class="blockquote">
-                <p class="mb-0">{{review.content}} <img src="images/smile.png" width="20px" ng-if="review.sentiment == 'Positive'"><img src="images/sad.png" width="20px" ng-if="review.sentiment == 'Negative'"></p>
-                <footer class="blockquote-footer">{{review.user.firstName + ' ' + review.user.lastName}} <span class="badge badge-info">{{review.aspect}}</span> <cite title="Source Title">- {{review.date.substr(0,10)}}</cite></footer>
+                <p class="mb-0">{{review.content}} <img src="images/smile.png" width="20px" ng-if="review.sentiment == 'Positive'"><img src="images/sad.png" width="20px" ng-if="review.sentiment == 'Negative'"><img src="images/neutral.png" width="20px" ng-if="review.sentiment == 'Neutral'"></p>
+                <footer class="blockquote-footer">{{review.user.firstName + ' ' + review.user.lastName}} <span class="badge badge-info" ng-hide="review.sentiment == 'Neutral'">{{review.aspect}}</span> <cite title="Source Title">- {{review.date.substr(0,10)}}</cite></footer>
             </blockquote>
         </div>
     </div>
