@@ -1,5 +1,5 @@
-app.controller('ProductController', ['$scope', '$rootScope', '$location', '$routeParams', 'ProductService', 'ReviewService', 'ProductCategoryFactory', 'CartService', 'WarehouseService',
-    function ($scope, $rootScope, $location, $routeParams, ProductService, ReviewService, ProductCategoryFactory, CartService, WarehouseService) {
+app.controller('ProductController', ['$scope', '$rootScope', '$location', '$routeParams', 'ProductService', 'ReviewService', 'ProductCategoryFactory', 'CartService', 'WarehouseService', 'BlockChainService',
+    function ($scope, $rootScope, $location, $routeParams, ProductService, ReviewService, ProductCategoryFactory, CartService, WarehouseService, BlockChainService) {
 
     $scope.allCategories = [];
     $scope.addToCartQty = '';

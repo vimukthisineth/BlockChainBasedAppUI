@@ -4,10 +4,17 @@ var restBaseUrl = "http://localhost:8050/";
 
 var app = angular.module('myApp', ['ngRoute']);
 
-app.controller('MainController', ['$scope', '$rootScope', function ($scope, $rootScope) {
+app.controller('MainController', ['$scope', '$rootScope', '$interval', 'BlockChainService', function ($scope, $rootScope, $interval, BlockChainService) {
 
     $rootScope.menuHtml = "";
     $rootScope.user = {};
+
+    BlockChainService.getBlockChain(function (result) {
+        $scope.blockChain = result;
+        if (!BlockChainService.mineBlockChain($scope.blockChain.blockChain)){
+            alert("The block chain is not valid");
+        }
+    });
 
 }]);
 
