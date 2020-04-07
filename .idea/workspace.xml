@@ -2,22 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="328ae217-4850-4bce-a106-bc279b52c7ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/delivery/customerDeliveryController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/distributor/warehouseController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/distributor/warehouseFactory.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/distributor/warehouseService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/new_customer_delivery_route.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/warehouses.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/delivery/deliveryFactory.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/delivery/deliveryFactory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/delivery/deliveryService.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/delivery/deliveryService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/distributor/distributorController.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/distributor/distributorController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/product/productController.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/product/productController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application.js" beforeDir="false" afterPath="$PROJECT_DIR$/application.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/admin.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/customer/buy_product.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/customer/buy_product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/distributor.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/distributor.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -146,7 +133,7 @@
       <workItem from="1585539179933" duration="16143000" />
       <workItem from="1585712396215" duration="1835000" />
       <workItem from="1586024053496" duration="596000" />
-      <workItem from="1586051834091" duration="18406000" />
+      <workItem from="1586051834091" duration="20441000" />
     </task>
     <servers />
   </component>

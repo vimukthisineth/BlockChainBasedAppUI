@@ -110,19 +110,19 @@ app.controller('ProductController', ['$scope', '$rootScope', '$location', '$rout
 
 
 
-        $scope.addToCart = function () {
-            console.log($scope.product);
-            var cartItem = {};
-            cartItem.product = $scope.product;
-            cartItem.qty = $scope.addToCartQty;
-            cartItem.warehouse
+    $scope.addToCart = function () {
+        console.log($scope.product);
+        var cartItem = {};
+        cartItem.product = $scope.product;
+        cartItem.qty = $scope.addToCartQty;
+        cartItem.warehouse
 
-            CartService.createCartItem(cartItem, function (result) {
-                if (result.id){
-                    alert("Added to cart");
-                }
-            });
-        }
+        CartService.createCartItem(cartItem, function (result) {
+            if (result.id){
+                alert("Added to cart");
+            }
+        });
+    }
 
 
 }]);
