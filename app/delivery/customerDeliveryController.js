@@ -19,7 +19,11 @@ app.controller('CustomerDeliveryRouteController', ['$scope', '$rootScope', '$loc
     $scope.getAllPurchases = function () {
         $scope.loading = true;
         CartService.getAllPurchases(function (result) {
-            $scope.allPurchases = result;
+            for (var i = 0; i < result.length; i++) {
+                if (!result[i].delivered){
+                    $scope.allPurchases.push(result[i]);
+                }
+            }
             $scope.loading = false;
         });
     }
