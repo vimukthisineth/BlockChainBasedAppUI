@@ -1,5 +1,5 @@
-app.controller('ProductController', ['$scope', '$rootScope', '$location', '$routeParams', 'ProductService', 'ReviewService', 'ProductCategoryFactory', 'CartService', 'WarehouseService', 'BlockChainService',
-    function ($scope, $rootScope, $location, $routeParams, ProductService, ReviewService, ProductCategoryFactory, CartService, WarehouseService, BlockChainService) {
+app.controller('ProductController', ['$scope', '$rootScope', '$location', '$window', '$routeParams', 'ProductService', 'ReviewService', 'ProductCategoryFactory', 'CartService', 'WarehouseService', 'BlockChainService',
+    function ($scope, $rootScope, $location, $window, $routeParams, ProductService, ReviewService, ProductCategoryFactory, CartService, WarehouseService, BlockChainService) {
 
     $scope.allCategories = [];
     $scope.addToCartQty = '';
@@ -93,11 +93,12 @@ app.controller('ProductController', ['$scope', '$rootScope', '$location', '$rout
             console.log($scope.newProduct);
             ProductService.create($scope.newProduct, function (data) {
                 console.log(data);
-                if (getCookie("user_type") == "FARMER") {
-                    $location.url('/Farmer');
-                }else if (getCookie("user_type") == "MANUFACTURER") {
-                    $location.url('/Manufacturer');
-                }
+                $window.history.back();
+                // if (getCookie("user_type") == "FARMER") {
+                //     $location.url('/Farmer');
+                // }else if (getCookie("user_type") == "MANUFACTURER") {
+                //     $location.url('/Manufacturer');
+                // }
             });
         }else {
             alert("Please fill the form");

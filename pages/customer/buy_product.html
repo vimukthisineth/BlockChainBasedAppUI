@@ -113,6 +113,17 @@
                 </div>
             </div>
         </div>
+        <div class="col-2 border border-secondary m-2 rounded pt-3 pb-2" ng-if="product.expiryDate != null">
+            <div class="row">
+                <div class="col-8 border-right">
+                    <p style="text-align: center">Expiry date</p>
+                    <p style="text-align: center">{{product.expiryDate.substr(0,10)}}</p>
+                </div>
+                <div class="col d-flex align-items-center">
+                    <p> -> </p>
+                </div>
+            </div>
+        </div>
         <div class="col-2 border border-secondary m-2 rounded pt-3 pb-2" ng-if="product.distributedDate != null">
             <div class="row">
                 <div class="col-8 border-right">
