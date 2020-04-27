@@ -1,4 +1,4 @@
-app.controller('DistributorController', ['$scope', '$rootScope', '$location', '$routeParams', 'ProductService', 'DeliveryService', function ($scope, $rootScope, $location, $routeParams, ProductService, DeliveryService) {
+app.controller('DistributorController', ['$scope', '$rootScope', '$location', '$routeParams', 'ProductService', 'DeliveryService', 'CartService', function ($scope, $rootScope, $location, $routeParams, ProductService, DeliveryService, CartService) {
     $rootScope.menuHtml = "menu/distributorMenu.html";
 
     $scope.allProducts = [];
@@ -17,6 +17,16 @@ app.controller('DistributorController', ['$scope', '$rootScope', '$location', '$
     }
 
     $scope.getAllProducts();
+
+    $scope.getAllPurchases = function () {
+        $scope.loading = true;
+        CartService.getAllPurchases(function (result) {
+            $scope.allPurchases = result;
+            $scope.loading = false;
+        });
+    }
+
+    $scope.getAllPurchases();
 
     $scope.getAllDeliveries = function(){
         DeliveryService.getAllDeliveriesByUserId($scope.user.id, function (data) {
