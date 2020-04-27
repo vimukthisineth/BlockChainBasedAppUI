@@ -87,6 +87,13 @@
                     </div>
                     <input type="text" class="form-control" placeholder="" aria-describedby="basic-addon4" ng-model="deliveryAddress">
                 </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon4">Nearest warehouse</span>
+                    </div>
+                    <select class="form-control" id="exampleFormControlSelect1" ng-model="warehouse" ng-options="warehouse as (warehouse.name+', '+warehouse.address) for warehouse in allWarehouses"></select>
+                </div>
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

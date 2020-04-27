@@ -1,4 +1,4 @@
-app.controller('CartController', ['$scope', '$rootScope', '$location', 'CartService', function ($scope, $rootScope, $location, CartService) {
+app.controller('CartController', ['$scope', '$rootScope', '$location', 'CartService', 'WarehouseService', function ($scope, $rootScope, $location, CartService, WarehouseService) {
     $rootScope.menuHtml = "menu/customerMenu.html";
     if (!$rootScope.user.id){
         $location.url('/Customer');
@@ -36,11 +36,15 @@ app.controller('CartController', ['$scope', '$rootScope', '$location', 'CartServ
     }
 
     $scope.checkout = function () {
-        var checkoutDto = {user: $scope.user, address: $scope.deliveryAddress};
+        var checkoutDto = {user: $scope.user, address: $scope.deliveryAddress, warehouse: $scope.warehouse};
         CartService.checkout(checkoutDto, function (result) {
             alert("Thanks and come again");
             $scope.getAllCartItems();
         });
     }
+
+    WarehouseService.getAllWarehouses(function (result) {
+        $scope.allWarehouses = result;
+    });
 
 }]);
