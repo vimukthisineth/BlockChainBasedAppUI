@@ -11,8 +11,11 @@ app.controller('MainController', ['$scope', '$rootScope', '$interval', 'BlockCha
 
     BlockChainService.getBlockChain(function (result) {
         $scope.blockChain = result;
+        console.log(result);
         if (!BlockChainService.mineBlockChain($scope.blockChain.blockChain)){
             alert("The block chain is not valid");
+        }else {
+            alert("Blockchain mined");
         }
     });
 
