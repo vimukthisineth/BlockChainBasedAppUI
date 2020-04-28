@@ -140,10 +140,11 @@
                     <th scope="col">User type</th>
                     <th scope="col">Address</th>
                     <th scope="col">Validity</th>
+                    <th scope="col">Last Login time</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr ng-repeat="user in allUsersValidated">
+                <tr ng-repeat="user in allUsersValidated | orderBy:'$index':true">
                     <th scope="row">{{user.user.id}}</th>
                     <td>{{user.user.firstName}}</td>
                     <td>{{user.user.lastName}}</td>
@@ -151,6 +152,7 @@
                     <td>{{user.user.userType}}</td>
                     <td>{{user.user.address}}</td>
                     <td>{{user.valid ? "Valid" : "Fake"}}</td>
+                    <td>{{user.lastLoginTime}}</td>
                 </tr>
                 </tbody>
             </table>
