@@ -1,25 +1,46 @@
-<div class="container bg-light mt-2">
+<div class="container-fluid mt-2" style="background-color: #d5e5eb">
     <div class="row">
-        <div class="col text-center p-2">
-            <h3 class="font-weight-bold text-dark">Dashboard</h3>
+        <div class="col p-3">
+            <h3 class="text-secondary">Dashboard</h3>
             <hr>
         </div>
     </div>
 
-    <div class="row" style="height: 200px">
-        <div class="col-3 shadow-lg p-3 m-3 rounded text-center align-middle my-auto" style="background-color: #0f6674">
-            <h2 class="font-weight-bold text-light"><i class="fas fa-shopping-bag"></i> Purchases</h2>
-            <h6 class="text-light" style="cursor: pointer" ng-click="expandPurchases()">Expand <i class="fas fa-arrow-circle-right"></i></h6>
+    <div class="row">
+        <div class="col shadow-lg p-3 m-3 rounded align-middle my-auto text-dark" style="background-color: #ebebeb">
+            <h6 class="font-weight-bold text-dark mb-3">PURCHASES</h6>
+            <div class="row">
+                <div class="col">
+                    <h1 style="color: #224989"><i class="fas fa-shopping-bag"></i></h1>
+                </div>
+                <div class="col text-right pr-5">
+                    <h6 style="cursor: pointer" ng-click="expandPurchases()">Expand <i class="fas fa-arrow-circle-right"></i></h6>
+                </div>
+            </div>
         </div>
 
-        <div class="col-3 shadow-lg p-3 m-3 rounded text-center align-middle my-auto" style="background-color: #747203">
-            <h2 class="font-weight-bold text-light"><i class="fas fa-carrot"></i> Products</h2>
-            <h6 class="text-light" style="cursor: pointer" ng-click="expandProducts()">Expand <i class="fas fa-arrow-circle-right"></i></h6>
+        <div class="col shadow-lg p-3 m-3 rounded align-middle my-auto text-dark" style="background-color: #ebebeb">
+            <h6 class="font-weight-bold text-dark mb-3">PRODUCTS</h6>
+            <div class="row">
+                <div class="col">
+                    <h1 style="color: #891d86"><i class="fas fa-carrot"></i></h1>
+                </div>
+                <div class="col text-right pr-5">
+                    <h6 style="cursor: pointer" ng-click="expandProducts()">Expand <i class="fas fa-arrow-circle-right"></i></h6>
+                </div>
+            </div>
         </div>
 
-        <div class="col-3 shadow-lg p-3 m-3 rounded text-center align-middle my-auto" style="background-color: #740300">
-            <h2 class="font-weight-bold text-light"><i class="fas fa-users"></i> Users</h2>
-            <h6 class="text-light" style="cursor: pointer" ng-click="expandUsers()">Expand <i class="fas fa-arrow-circle-right"></i></h6>
+        <div class="col shadow-lg p-3 m-3 rounded align-middle my-auto text-dark" style="background-color: #ebebeb">
+            <h6 class="font-weight-bold text-dark mb-3">USERS</h6>
+            <div class="row">
+                <div class="col">
+                    <h1 style="color: #1e7910"><i class="fas fa-users"></i></h1>
+                </div>
+                <div class="col text-right pr-5">
+                    <h6 style="cursor: pointer" ng-click="expandUsers()">Expand <i class="fas fa-arrow-circle-right"></i></h6>
+                </div>
+            </div>
         </div>
     </div>
     <hr>
@@ -33,7 +54,7 @@
     </div>
 
     <div class="row" ng-hide="hidePurchases">
-        <div class="col">
+        <div class="col bg-light">
             <h2 class="text-center">Purchases</h2>
             <table class="table table-striped">
                 <thead>
@@ -67,7 +88,7 @@
     </div>
 
     <div class="row" ng-hide="hideProducts">
-        <div class="col">
+        <div class="col bg-light">
             <h2 class="text-center">Products</h2>
             <table class="table table-striped">
                 <thead>
@@ -78,11 +99,11 @@
                     <th scope="col">Retail price</th>
                     <th scope="col">Wholesale price</th>
                     <th scope="col">Product type</th>
-                    <th scope="col">Farmed date</th>
-                    <th scope="col">Harvested date</th>
-                    <th scope="col">Manufactured date</th>
-                    <th scope="col">Approved date</th>
-                    <th scope="col">Disapproved date</th>
+                    <th scope="col">Farmer</th>
+                    <th scope="col">Harvest</th>
+                    <th scope="col">Manufacturer</th>
+                    <th scope="col">Approved</th>
+                    <th scope="col">Disapproved</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -93,11 +114,11 @@
                     <td>{{product.retailPrice}}</td>
                     <td>{{product.wholeSalePrice}}</td>
                     <td>{{product.productType}}</td>
-                    <td>{{product.farmedDate.substring(0,10)}}</td>
-                    <td>{{product.harvestedDate.substring(0,10)}}</td>
-                    <td>{{product.manufacturedDate.substring(0,10)}}</td>
-                    <td>{{product.approvedDate.substring(0,10)}}</td>
-                    <td>{{product.disApprovedDate.substring(0,10)}}</td>
+                    <td><span class="badge {{product.farmedDate ? 'badge-success' : 'badge-warning'}}">{{product.farmedDate ? 'Complete' : 'Pending'}}</span></td>
+                    <td><span class="badge {{product.harvestedDate ? 'badge-success' : 'badge-warning'}}">{{product.harvestedDate ? 'Complete' : 'Pending'}}</span></td>
+                    <td><span class="badge {{product.manufacturedDate ? 'badge-success' : 'badge-warning'}}">{{product.manufacturedDate ? 'Complete' : 'Pending'}}</span></td>
+                    <td><span class="badge {{product.approvedDate ? 'badge-success' : 'badge-warning'}}">{{product.approvedDate ? 'Complete' : 'Pending'}}</span></td>
+                    <td><span class="badge {{product.disApprovedDate ? 'badge-danger' : 'badge-success'}}">{{product.disApprovedDate ? 'Disapproved' : 'Pending'}}</span></td>
                 </tr>
                 </tbody>
             </table>
@@ -105,7 +126,7 @@
     </div>
 
     <div class="row" ng-hide="hideUsers">
-        <div class="col">
+        <div class="col bg-light">
             <h2 class="text-center">Users <span class="badge badge-primary" style="cursor: pointer" ng-click="validateUsers()">Validate</span></h2>
             <table class="table table-striped" ng-if="hideValidatedUsers">
                 <thead>

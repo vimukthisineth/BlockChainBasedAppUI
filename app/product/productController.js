@@ -61,6 +61,40 @@ app.controller('ProductController', ['$scope', '$rootScope', '$location', '$wind
             ReviewService.getReviewsByProductId($scope.id, function (data) {
                 $scope.allReviews = data;
                 console.log(data);
+                var priceCount = 0;
+                var tasteCount = 0;
+                var qualityCount = 0;
+                for (var i = 0; i < data.length; i++) {
+                    if (data[i].sentiment != "Neutral"){
+                        if (data[i].aspect == 'Price'){
+                            priceCount++;
+                        }else if (data[i].aspect == 'Quality'){
+                            qualityCount++;
+                        }else if (data[i].aspect == 'Taste'){
+                            tasteCount++;
+                        }
+                    }
+                }
+
+                new Chart(document.getElementById("doughnut-chart"), {
+                    type: 'doughnut',
+                    data: {
+                        labels: ["Price", "Taste", "Quality"],
+                        datasets: [
+                            {
+                                label: "Population (millions)",
+                                backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f"],
+                                data: [priceCount,tasteCount,qualityCount]
+                            }
+                        ]
+                    },
+                    options: {
+                        title: {
+                            display: true,
+                            text: 'Review aspects'
+                        }
+                    }
+                });
             });
         }
 

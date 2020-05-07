@@ -6,17 +6,61 @@
     </div>
     <hr>
     <div class="row">
-        <div class="col-5 m-3">
-            <img src="images/thumbs/{{product.image}}" width="100%">
+        <div class="col-5 text-center p-1 ml-2 rounded" style="background-color: #6bd835">
+            <h4 class="font-weight-bold text-light">Product Details</h4>
         </div>
-        <div class="col-6 m-3">
-            <p style="color: #958e78">{{product.productCategory.name}} ></p>
-            <h3>{{product.name}} <span class="badge badge-pill badge-success" ng-if="product.approved">Certified</span></h3>
-            <h5>{{product.productType == 'FARMER' ? product.farmerPrice.toFixed(2) : product.retailPrice.toFixed(2)}} LKR</h5>
-            <h6>Expired by: {{product.expiryDate.substr(0,10)}}</h6>
-            <hr>
-            <p>{{product.description}}</p>
-            <button class="btn btn-success btn-block" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-cart-plus"></i> Add to cart</button>
+        <div class="col text-center p-1 ml-2 mr-2 rounded" style="background-color: #6bd835">
+            <h4 class="font-weight-bold text-light">History</h4>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-5 ml-2 p-0">
+            <div>
+                <img class="rounded-top mt-2" src="images/thumbs/{{product.image}}" width="100%">
+            </div>
+            <div class="mt-1 p-3 text-dark rounded-bottom" style="background-color: #cdcccb">
+                <p style="color: #3c2a1c">{{product.productCategory.name}} ></p>
+                <h3>{{product.name}} <span class="badge badge-pill badge-success" ng-if="product.approved">Certified</span></h3>
+                <h5>{{product.productType == 'FARMER' ? product.farmerPrice.toFixed(2) : product.retailPrice.toFixed(2)}} LKR</h5>
+                <h6>Expired by: {{product.expiryDate.substr(0,10)}}</h6>
+                <hr>
+                <p>{{product.description}}</p>
+                <button class="btn btn-success btn-block" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-cart-plus"></i> Add to cart</button>
+            </div>
+        </div>
+        <div class="col m-2 rounded pt-2" style="background-color: #eae9e8">
+            <div class="row">
+                <div class="col-2 text-right">
+                    <h3><i class="fas fa-check-circle"></i></h3>
+                </div>
+                <div class="col">
+                    <h3 class="font-weight-bold text-dark">Sampath Farm</h3>
+                    <p class="text-secondary m-0">Freshly harvested</p>
+                    <p class="text-secondary m-0">Cultivated on: {{product.farmedDate.substr(0,10)}}</p>
+                    <p class="text-secondary m-0">Harvested on: {{product.harvestedDate.substr(0,10)}}</p>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-2 text-right">
+                    <h3><i class="fas fa-check-circle"></i></h3>
+                </div>
+                <div class="col">
+                    <h3 class="font-weight-bold text-dark">Rich Foods</h3>
+                    <p class="text-secondary m-0">Manufactured with care</p>
+                    <p class="text-secondary m-0">Manufactured on: {{product.manufacturedDate.substr(0,10)}}</p>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-2 text-right">
+                    <h3><i class="fas fa-check-circle"></i></h3>
+                </div>
+                <div class="col">
+                    <h3 class="font-weight-bold text-dark">National food promotion board</h3>
+                    <p class="text-secondary m-0">Approved by the agency</p>
+                    <p class="text-secondary m-0">Approved on: {{product.approvedDate.substr(0,10)}}</p>
+                </div>
+            </div>
         </div>
     </div>
     <hr>
@@ -25,6 +69,14 @@
             <h3>- Reviews -</h3>
         </div>
     </div>
+    <hr>
+
+    <div class="row">
+        <div class="col">
+            <canvas id="doughnut-chart" width="400" height="225"></canvas>
+        </div>
+    </div>
+
     <hr>
     <div class="row mb-2">
         <div class="col">

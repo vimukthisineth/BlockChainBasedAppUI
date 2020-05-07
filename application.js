@@ -15,7 +15,7 @@ app.controller('MainController', ['$scope', '$rootScope', '$interval', 'BlockCha
         if (!BlockChainService.mineBlockChain($scope.blockChain.blockChain)){
             alert("The block chain is not valid");
         }else {
-            alert("Blockchain mined");
+            // alert("Blockchain mined");
         }
     });
 
