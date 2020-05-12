@@ -9,15 +9,20 @@ app.controller('MainController', ['$scope', '$rootScope', '$interval', 'BlockCha
     $rootScope.menuHtml = "";
     $rootScope.user = {};
 
-    BlockChainService.getBlockChain(function (result) {
-        $scope.blockChain = result;
-        console.log(result);
-        if (!BlockChainService.mineBlockChain($scope.blockChain.blockChain)){
-            alert("The block chain is not valid");
-        }else {
-            // alert("Blockchain mined");
-        }
-    });
+    $scope.mineBlockchain = function () {
+        BlockChainService.getBlockChain(function (result) {
+            $scope.blockChain = result;
+            console.log(result);
+            if (!BlockChainService.mineBlockChain($scope.blockChain.blockChain)){
+                alert("The block chain is not valid");
+                $scope.mineBlockchain();
+            }else {
+                // alert("Blockchain mined");
+            }
+        });
+    }
+
+    $scope.mineBlockchain();
 
 }]);
 

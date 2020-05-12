@@ -64,6 +64,8 @@ app.controller('ProductController', ['$scope', '$rootScope', '$location', '$wind
                 var priceCount = 0;
                 var tasteCount = 0;
                 var qualityCount = 0;
+                var positiveCount = 0;
+                var negativeCount = 0;
                 for (var i = 0; i < data.length; i++) {
                     if (data[i].sentiment != "Neutral"){
                         if (data[i].aspect == 'Price'){
@@ -72,6 +74,12 @@ app.controller('ProductController', ['$scope', '$rootScope', '$location', '$wind
                             qualityCount++;
                         }else if (data[i].aspect == 'Taste'){
                             tasteCount++;
+                        }
+
+                        if (data[i].sentiment == "Positive"){
+                            positiveCount++;
+                        }else {
+                            negativeCount++;
                         }
                     }
                 }
@@ -92,6 +100,26 @@ app.controller('ProductController', ['$scope', '$rootScope', '$location', '$wind
                         title: {
                             display: true,
                             text: 'Review aspects'
+                        }
+                    }
+                });
+
+                new Chart(document.getElementById("doughnut-chart2"), {
+                    type: 'doughnut',
+                    data: {
+                        labels: ["Positive", "negative"],
+                        datasets: [
+                            {
+                                label: "Population (millions)",
+                                backgroundColor: ["#3e95cd", "#8e5ea2"],
+                                data: [positiveCount,negativeCount]
+                            }
+                        ]
+                    },
+                    options: {
+                        title: {
+                            display: true,
+                            text: 'Review Sentiment'
                         }
                     }
                 });

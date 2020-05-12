@@ -5,8 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/product/productController.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/product/productController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application.js" beforeDir="false" afterPath="$PROJECT_DIR$/application.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/admin/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admin/admin.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/customer/buy_product.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/customer/buy_product.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -148,7 +146,16 @@
       <workItem from="1588034514018" duration="1916000" />
       <workItem from="1588133436665" duration="293000" />
       <workItem from="1588750370883" duration="7474000" />
-      <workItem from="1588813669374" duration="2606000" />
+      <workItem from="1588813669374" duration="7127000" />
+      <workItem from="1588908041479" duration="327000" />
+      <workItem from="1588935993212" duration="276000" />
+      <workItem from="1588936402898" duration="1413000" />
+      <workItem from="1588948588060" duration="10000" />
+      <workItem from="1588990930952" duration="1327000" />
+      <workItem from="1589030213405" duration="14000" />
+      <workItem from="1589160098629" duration="1491000" />
+      <workItem from="1589213714398" duration="88000" />
+      <workItem from="1589296689136" duration="341000" />
     </task>
     <servers />
   </component>
