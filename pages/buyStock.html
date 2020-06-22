@@ -1,0 +1,54 @@
+<div class="container-fluid p-3 pl-5 pr-5">
+    <div class="row justify-content-center">
+        <div class="col-10 bg-light p-3">
+            <h3 class="font-weight-bold text-dark text-center mb-3">Buy Stock from Manufacturer</h3>
+
+            <form ng-submit="submitPurchase()">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="exampleFormControlSelect1">Product</label>
+                        <select class="form-control" id="exampleFormControlSelect1" ng-options="product as product.name for product in allProducts" ng-model="newPurchase.product"></select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPassword4">Qty</label>
+                        <input type="text" class="form-control" id="inputPassword4" placeholder="Qty" ng-model="newPurchase.qty">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="exampleFormControlSelect2">Warehouse</label>
+                        <select class="form-control" id="exampleFormControlSelect2" ng-options="product as product.name for product in allWarehouses" ng-model="newPurchase.warehouse"></select>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success">Add</button>
+                <button type="button" class="btn btn-warning" ng-click="goToHome()">Go back</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="row justify-content-center mt-2">
+        <div class="col-10 bg-light p-3">
+            <h3 class="font-weight-bold text-dark text-center mb-3">All purchases</h3>
+            <table class="table">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Warehouse</th>
+                    <th scope="col">Qty</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="purchase in allPurchases">
+                    <th scope="row">{{purchase.id}}</th>
+                    <td>{{purchase.date.substring(0,10)}}</td>
+                    <td>{{purchase.product.name}}</td>
+                    <td>{{purchase.warehouse.name}}</td>
+                    <td>{{purchase.qty}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

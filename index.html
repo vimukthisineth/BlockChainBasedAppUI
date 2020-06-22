@@ -9,6 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/buttons.css">
+    <link rel="stylesheet" href="css/style.css">
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" integrity="sha256-aa0xaJgmK/X74WM224KMQeNQC2xYKwlAt08oZqjeF0E=" crossorigin="anonymous" />
@@ -24,7 +25,7 @@
 
     <div ng-include="menuHtml" ng-controller="MenuController"></div>
 
-    <div ng-view></div>
+    <div ng-view class="bg-dark"></div>
 
 
     <hr>
@@ -76,6 +77,10 @@
 
     <script src="app/blockchain/blockchainService.js"></script>
     <script src="app/blockchain/blockchainFactory.js"></script>
+
+    <script src="app/distributorPurchase/distributorPurchaseFactory.js"></script>
+    <script src="app/distributorPurchase/distributorPurchaseService.js"></script>
+    <script src="app/distributorPurchase/distributorPurchaseController.js"></script>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -40,12 +40,17 @@ app.controller('ProductController', ['$scope', '$rootScope', '$location', '$wind
                 $scope.product.image = "juice.jpg";
             }
             console.log(data);
+            $scope.historyList = [];
             for (var i = 0; i < $scope.blockChain.blockChain.length; i++) {
-                var words = $scope.blockChain.blockChain[i].data.split(" ");
-                if (words.length > 1 && words[1] == $scope.product.id){
-                    console.log($scope.blockChain.blockChain[i]);
+                try {
+                    var block = angular.fromJson($scope.blockChain.blockChain[i].data);
+                    if (block.product == $routeParams.id){
+                        $scope.historyList.push(block);
+                    }
+                }catch (e) {
                 }
             }
+            console.log($scope.historyList);
         });
 
         $scope.newReview = {content:'', user:{id:getCookie("user_id"), email:getCookie("user_email")}, product:{id:$scope.id}};

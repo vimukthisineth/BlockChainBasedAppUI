@@ -61,6 +61,10 @@ app.controller('DistributorController', ['$scope', '$rootScope', '$location', '$
         $location.url('/Warehouses');
     }
 
+    $scope.goToBuyStock = function(){
+        $location.url('/BuyStock');
+    }
+
 //    Filters
     $scope.approved = function (product) {
         return product.approved == true;

@@ -1,4 +1,4 @@
-<div class="container bg-light mt-2">
+<div class="container grad-green-yellow-light mt-2">
     <div class="row p-0 mt-0">
         <div class="col d-flex justify-content-center mt-0 p-5" style="background-image: url('images/wide_dark_bannar.jpg'); color: #ffffff;">
             <h2>Product Details</h2>
@@ -19,7 +19,7 @@
             <div>
                 <img class="rounded-top mt-2" src="images/thumbs/{{product.image}}" width="100%">
             </div>
-            <div class="mt-1 p-3 text-dark rounded-bottom" style="background-color: #cdcccb">
+            <div class="mt-1 p-3 text-dark rounded-bottom grad-light-blue" style="background-color: #cdcccb">
                 <p style="color: #3c2a1c">{{product.productCategory.name}} ></p>
                 <h3>{{product.name}} <span class="badge badge-pill badge-success" ng-if="product.approved">Certified</span></h3>
                 <h5>{{product.productType == 'FARMER' ? product.farmerPrice.toFixed(2) : product.retailPrice.toFixed(2)}} LKR</h5>
@@ -29,7 +29,7 @@
                 <button class="btn btn-success btn-block" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-cart-plus"></i> Add to cart</button>
             </div>
         </div>
-        <div class="col m-2 rounded pt-2" style="background-color: #eae9e8">
+        <div class="col m-2 rounded pt-2" style="background-color: #00e8eb">
             <div class="row">
                 <div class="col-2 text-right">
                     <h3><i class="fas fa-check-circle"></i></h3>
@@ -113,77 +113,10 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-2 border border-secondary m-2 rounded pt-3 pb-2" ng-if="product.farmedDate != null">
+        <div class="col-2 border border-secondary m-2 rounded pt-3 pb-2" ng-repeat="block in historyList">
             <div class="row">
                 <div class="col-8 border-right">
-                    <p style="text-align: center">Crop cultivated</p>
-                    <p style="text-align: center">{{product.farmedDate.substr(0,10)}}</p>
-                </div>
-                <div class="col d-flex align-items-center">
-                    <p> -> </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 border border-secondary m-2 rounded pt-3 pb-2" ng-if="product.harvestedDate != null">
-            <div class="row">
-                <div class="col-8 border-right">
-                    <p style="text-align: center">Crop Harvested</p>
-                    <p style="text-align: center">{{product.harvestedDate.substr(0,10)}}</p>
-                </div>
-                <div class="col d-flex align-items-center">
-                    <p> -> </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 border border-secondary m-2 rounded pt-3 pb-2" ng-if="product.manufacturedDate != null">
-            <div class="row">
-                <div class="col-8 border-right">
-                    <p style="text-align: center">Manufactured</p>
-                    <p style="text-align: center">{{product.manufacturedDate.substr(0,10)}}</p>
-                </div>
-                <div class="col d-flex align-items-center">
-                    <p> -> </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 border border-secondary m-2 rounded pt-3 pb-2" ng-if="product.approvedDate != null">
-            <div class="row">
-                <div class="col-8 border-right">
-                    <p style="text-align: center">Approved by Agency</p>
-                    <p style="text-align: center">{{product.approvedDate.substr(0,10)}}</p>
-                </div>
-                <div class="col d-flex align-items-center">
-                    <p> -> </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 border border-secondary m-2 rounded pt-3 pb-2" ng-if="product.disApprovedDate != null">
-            <div class="row">
-                <div class="col-8 border-right">
-                    <p style="text-align: center">Disapproved by Agency</p>
-                    <p style="text-align: center">{{product.disApprovedDate.substr(0,10)}}</p>
-                </div>
-                <div class="col d-flex align-items-center">
-                    <p> -> </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 border border-secondary m-2 rounded pt-3 pb-2" ng-if="product.expiryDate != null">
-            <div class="row">
-                <div class="col-8 border-right">
-                    <p style="text-align: center">Expiry date</p>
-                    <p style="text-align: center">{{product.expiryDate.substr(0,10)}}</p>
-                </div>
-                <div class="col d-flex align-items-center">
-                    <p> -> </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-2 border border-secondary m-2 rounded pt-3 pb-2" ng-if="product.distributedDate != null">
-            <div class="row">
-                <div class="col-8 border-right">
-                    <p style="text-align: center">Delivery started</p>
-                    <p style="text-align: center">{{product.distributedDate.substr(0,10)}}</p>
+                    <p style="text-align: center">{{block.blockMessage}}</p>
                 </div>
                 <div class="col d-flex align-items-center">
                     <p> -> </p>

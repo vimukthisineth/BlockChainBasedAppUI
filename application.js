@@ -45,6 +45,7 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
     $routeProvider.when('/Customer', {templateUrl: 'pages/customer/customer.html', controller: 'CustomerController'});
     $routeProvider.when('/BuyProduct/:id', {templateUrl: 'pages/customer/buy_product.html', controller: 'ProductController'});
     $routeProvider.when('/Cart', {templateUrl: 'pages/customer/cart.html', controller: 'CartController'});
+    $routeProvider.when('/BuyStock', {templateUrl: 'pages/buyStock.html', controller: 'distributorPurchaseController'});
 
 
     // $locationProvider.html5Mode(true);

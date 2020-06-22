@@ -1,4 +1,4 @@
-<div class="container bg-light">
+<div class="container grad-green-yellow-light">
     <div class="row">
         <div class="col">
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -50,7 +50,7 @@
         <div class="col d-flex justify-content-center mb-3" ng-repeat="product in allProducts">
             <div class="card" style="width: 18rem;">
                 <img class="card-img-top" src="images/thumbs/{{product.image}}" alt="Card image cap">
-                <div class="card-body">
+                <div class="card-body grad-blue-green">
                     <h5 class="card-title">{{product.name}} <span class="badge badge-pill badge-warning" ng-if="product.productType == 'FARMER'">From Farmer</span></h5>
                     <h6>{{product.productType == 'FARMER' ? product.farmerPrice.toFixed(2) : product.retailPrice.toFixed(2)}} LKR</h6>
                     <p class="card-text">{{product.description}}</p>

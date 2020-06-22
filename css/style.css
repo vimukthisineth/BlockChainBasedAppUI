@@ -1,0 +1,29 @@
+.grad-sakura
+{
+    background-color: #FFDEE9;
+    background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
+}
+
+.grad-green-yellow-light
+{
+    background-color: #85FFBD;
+    background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+}
+
+.grad-blue-green
+{
+    background-color: #08AEEA;
+    background-image: linear-gradient(180deg, #08AEEA 0%, #2AF598 100%);
+}
+
+.grad-blue-blue-dark
+{
+    background-color: #21D4FD;
+    background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+}
+
+.grad-light-blue
+{
+    background-color: #D9AFD9;
+    background-image: linear-gradient(180deg, #D9AFD9 0%, #97D9E1 100%);
+}
