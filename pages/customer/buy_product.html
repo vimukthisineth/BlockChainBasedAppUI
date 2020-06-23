@@ -19,7 +19,7 @@
             <div>
                 <img class="rounded-top mt-2" src="images/thumbs/{{product.image}}" width="100%">
             </div>
-            <div class="mt-1 p-3 text-dark rounded-bottom grad-light-blue" style="background-color: #cdcccb">
+            <div class="mt-1 p-3 text-dark rounded-bottom" style="background-color: rgba(30,121,16,0.33)">
                 <p style="color: #3c2a1c">{{product.productCategory.name}} ></p>
                 <h3>{{product.name}} <span class="badge badge-pill badge-success" ng-if="product.approved">Certified</span></h3>
                 <h5>{{product.productType == 'FARMER' ? product.farmerPrice.toFixed(2) : product.retailPrice.toFixed(2)}} LKR</h5>
@@ -29,7 +29,7 @@
                 <button class="btn btn-success btn-block" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-cart-plus"></i> Add to cart</button>
             </div>
         </div>
-        <div class="col m-2 rounded pt-2" style="background-color: #00e8eb">
+        <div class="col m-2 rounded pt-2" style="background-color: #e4e4e4">
             <div class="row">
                 <div class="col-2 text-right">
                     <h3><i class="fas fa-check-circle"></i></h3>
@@ -107,23 +107,23 @@
         </div>
     </div>
     <hr>
-    <div class="row mb-2">
-        <div class="col d-flex justify-content-center">
-            <h3>- History -</h3>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-2 border border-secondary m-2 rounded pt-3 pb-2" ng-repeat="block in historyList">
-            <div class="row">
-                <div class="col-8 border-right">
-                    <p style="text-align: center">{{block.blockMessage}}</p>
-                </div>
-                <div class="col d-flex align-items-center">
-                    <p> -> </p>
-                </div>
-            </div>
-        </div>
-    </div>
+<!--    <div class="row mb-2">-->
+<!--        <div class="col d-flex justify-content-center">-->
+<!--            <h3>- History -</h3>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="row">-->
+<!--        <div class="col-2 border border-secondary m-2 rounded pt-3 pb-2" ng-repeat="block in historyList">-->
+<!--            <div class="row">-->
+<!--                <div class="col-8 border-right">-->
+<!--                    <p style="text-align: center">{{block.blockMessage}}</p>-->
+<!--                </div>-->
+<!--                <div class="col d-flex align-items-center">-->
+<!--                    <p> -> </p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 </div>
 
 
