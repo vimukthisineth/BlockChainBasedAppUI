@@ -164,9 +164,23 @@ app.controller('ProductController', ['$scope', '$rootScope', '$location', '$wind
             $scope.newProduct.user = {};
             $scope.newProduct.user.id = getCookie("user_id");
             console.log($scope.newProduct);
-            ProductService.create($scope.newProduct, function (data) {
-                console.log(data);
-                $window.history.back();
+            ProductService.create($scope.newProduct, function (result) {
+                console.log(result);
+                // $window.history.back();
+                var data = getUser();
+                if (data.userType == "FARMER"){
+                    $location.url('/Farmer');
+                }else if (data.userType == "MANUFACTURER") {
+                    $location.url('/Manufacturer');
+                }else if (data.userType == "AGENCY") {
+                    $location.url('/Agency');
+                }else if (data.userType == "DISTRIBUTOR") {
+                    $location.url('/Distributor');
+                }else if (data.userType == "CUSTOMER") {
+                    $location.url('/Customer');
+                }else if (data.userType == "ADMIN") {
+                    $location.url('/Admin');
+                }
                 // if (getCookie("user_type") == "FARMER") {
                 //     $location.url('/Farmer');
                 // }else if (getCookie("user_type") == "MANUFACTURER") {
@@ -179,7 +193,20 @@ app.controller('ProductController', ['$scope', '$rootScope', '$location', '$wind
     }
 
     $scope.goBackToFarmer = function () {
-        $location.url('/Farmer');
+        var data = getUser();
+        if (data.userType == "FARMER"){
+            $location.url('/Farmer');
+        }else if (data.userType == "MANUFACTURER") {
+            $location.url('/Manufacturer');
+        }else if (data.userType == "AGENCY") {
+            $location.url('/Agency');
+        }else if (data.userType == "DISTRIBUTOR") {
+            $location.url('/Distributor');
+        }else if (data.userType == "CUSTOMER") {
+            $location.url('/Customer');
+        }else if (data.userType == "ADMIN") {
+            $location.url('/Admin');
+        }
     }
 
 
